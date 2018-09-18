@@ -602,7 +602,7 @@ corresponding conversation in the Chat application.
 .. _Global-notification-settings:
 
 Global Notification Settings
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Desktop notifications complement other ways to draw your attention to
 new messages like the on-site counter and the bips. You can enable or
@@ -633,12 +633,14 @@ room. For that purpose, follow these steps:
 
 |image83|
 
--  |image84| Select the room that you want to parameter it's
+-  |image84| Filter to select the "Rooms" list
+
+-  |image85| Select the room that you want to parameter it's
    notifications. You can select either one to one chat room or a group
    chat room.
 
--  |image85| Click on |image86| to display actions that you can do on that
-   room.
+-  |image122| Click on |image86| to display actions that you can do on 
+   that room.
 
 -  |image87| Select Notifications from the list.
 
@@ -663,20 +665,34 @@ When your contacts list becomes so long, it will be difficult to control
 all. Here are some tips commonly used to keep your contacts list
 well-organized and easy to find.
 
-.. _Hide-show-chat-contacts:
+.. _Sort_by_msg_status:
 
-Hiding/Showing contacts list
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Sort discussions by messages status
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Currently, your discussions can be arranged into 4 categories in the
-left pane: Favorites, People, Teams and Spaces. To find what you want
-quickly, you should show lists one by one by clicking |image88| and hide
-unnecessary lists by clicking |image89|.
+|image123|
 
-|image90|
+You can sort your discussions by selecting one of these messages 
+statuses:
 
-Also, in **People** pane, you can click |image91| to show/hide offline
-users.
+- *Recent*: orders discussions starting by the most recent one.
+
+- *Unread*: orders discussions starting by the ones that contain unread 
+  messages.
+  
+  
+.. _Mark_as_read_action:
+
+Mark as read
+-------------
+
+When you have many messages in your discussions that you are not 
+interested to ddep on them, you can simply mark them as read:
+
+|image124| 
+ 
+This action will remove all the numbers of unread messages near the
+corresponding discussions.  
 
 .. _Add-toFavorites:
 
@@ -684,26 +700,44 @@ Adding to favorites
 ~~~~~~~~~~~~~~~~~~~~~~
 
 To find quickly a contact you often chat with, hover over one and click
-|image92| to save as a favorite. The contact will be moved to the
-**Favorites** pane, at the top of your chat lists.
+|image92| to save as a favorite. 
 
-To remove one contact from your favorites, hover over the contact in the
-**Favorites** list and select |image93|.
+The star will move to "yellow" color to distinguish favorites contacts:
+
+|image125|
+
+To remove one contact from your favorites, hover over the contact and 
+select |image93|.
+
+.. _Filter_categories:
+
+Filter by discussions category
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+|image126|
+
+You can select a discussion category: 
+
+- All: lists all your discussions.
+
+- People: to list only one-to-one discussions.
+
+- Rooms: to list only rooms discussions.
+
+- Spaces: to list only space discussions.
+
+- Favorites: to list the favorite contacts/group discussions.
 
 .. _Use-search-bar:
 
 Using search bar
 ~~~~~~~~~~~~~~~~
 
--  If you want to find one contact, type some letters following @ in the
+-  If you want to find one contact, type some letters following in the
    search bar. The contacts will be filtered accordingly.
 
    |image94|
 
--  Enter the beginning of multiple words following @, and the predictive
-   search will find the best match.
-
-   |image95|
 
 -  No matter whether you remember the beginning of a group name, the
    first name or the last name of someone, the search will always return
@@ -717,15 +751,16 @@ Using search bar
 Chat messages history
 =====================
 
-Discussing in eXo Chat by :ref:`Sending <SendingIM>` and :ref:`recieving <ReceivingIM>` instant messages
-induces to register the chat messages history which could be easily accessible later through the chat room.
+Discussing in eXo Chat by :ref:`Sending <SendingIM>` and :ref:`recieving <ReceivingIM>` 
+instant messages induces to register the chat messages history which 
+could be easily accessible later through the chat room.
 
 To visualize old chat messages, all you need to do is to scroll up the
-chat window, a loading icon |image0| appears the time to load up to 200
-old message. When the loading icon |image1| disapears this means that
-the 200 messages was loaded and you can read them.
+chat window, a loading icon |image127| appears the time to load up to 
+200 old message. When the loading icon |image128| disapears this means 
+that the 200 messages was loaded and you can read them.
 
-   .. note:: The number of loaded chat messages is set by default to 200, it could be configurable in :ref:`exo.properties <#PLFAdminGuide.Configuration.ConfigurationOverview>`.
+   .. note:: The number of loaded chat messages is set by default to 200, it could be configurable in :ref:`exo.properties <Configuration.ConfigurationOverview>`.
 
 .. _ResponsiveDesign:
 
@@ -866,8 +901,8 @@ appears, select the desired status and the it is updated.
 .. |image83| image:: images/chat/room_notifications.png
 .. |image84| image:: images/1.png
 .. |image85| image:: images/2.png
-.. |image86| image:: images/chat/select_icon.png
-.. |image87| image:: images/3.png
+.. |image86| image:: images/chat/scroll-list-chat.png
+.. |image87| image:: images/4.png
 .. |image88| image:: images/chat/show_chat_icon.png
 .. |image89| image:: images/chat/hide_chat_icon.png
 .. |image90| image:: images/chat/chat_lists.png
@@ -904,3 +939,12 @@ appears, select the desired status and the it is updated.
 .. |image119| image:: images/chat/Actions_other_users.png
 .. |image120| image:: images/chat/confirm_deletion_chat_msg.png
 .. |image121| image:: images/chat/close_collaborative_actions.png
+.. |image122| image:: images/3.png
+.. |image123| image:: images/chat/Sort_by.png
+.. |image124| image:: images/chat/Mark_read.png
+.. |image125| image:: images/chat/Favorites_contacts.png
+.. |image126| image:: images/chat/filter_category.png
+.. |image127| image:: images/chat/loading_icon.png
+.. |image128| image:: images/chat/loading_icon.png
+
+
