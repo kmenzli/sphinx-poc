@@ -5,11 +5,11 @@ Discussing in Chat
 #########################
 
     eXo Chat is an instant messaging application that allows users to
-    sync up and take action quickly. Tightly integrated since eXo Platform 4,
-    eXo Chat empowers the real-time collaboration among teams and
-    individuals.
+    sync up and take action quickly. Tightly integrated since eXo 
+    Platform 4, eXo Chat empowers the real-time collaboration among 
+    teams and individuals.
 
-    Here is summary of what BRAND\_CHAT brings:
+    Here is summary of what eXo Chat brings:
 
     -  **Discussions**: Create quick conversation with your contacts,
        from group to specific person.
@@ -23,7 +23,7 @@ Discussing in Chat
 
     -  **Collaboration**: Leverage collaboration with a set of actions
        (creating an event/task, sharing a link/file, asking a question
-       or raising your hand), directly within BRAND\_CHAT.
+       or raising your hand), directly within eXo Chat.
 
     -  **Notifications**: Follow notifications sent to you in real time,
        read and answer messages immediately or later when you are free.
@@ -73,8 +73,9 @@ name.
 
    |image1|
 
--  If you are in the Chat window, click your current status icon, and
-   select one from the drop-down menu.
+
+-  If you are in the Chat window, click your current status icon under 
+   your name, and select one from the drop-down menu.
 
    |image2|
 
@@ -122,26 +123,34 @@ When you click on the message, the mini chat window appears:
 -  |image17| Where the message is composed. Clicking Enter on the
    keyboard sends the message.
 
--  |image18| The display name of the user who sent the message.
+-  |image18| The display name near the avatar of the user who sent the 
+   message.
 
 -  |image19| The message content.
 
 
 
  .. note:: * The mini chat window could also be opened by:
+ 
 				- Clicking on chat button |image20| on the user profile.
+				
 				- Clicking on chat button on user and spaces popovers:
 				
+				
 				|image21|
+				
               
 		   * The mini chat window behaves on mobile devices the same as
 		     for web:
 		     
+		     
 				|image22|
+				
 			
 		   * When your mini chat window is collapsed and you receive an 
 		     instant message, the number of unread messages appears in 
-		     both the chat icon and the mini chat window:
+		     the collapsed mini chat window near the user's name:
+		     
 			
 			|image23|
 
@@ -164,20 +173,20 @@ owner or member) are auto-listed into the Spaces pane.
 Creating a new chat room
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-1. From the top navigation bar, click |image25| --> Open Chat to open the chat
-window.
+1. From the top navigation bar, click |image25| --> Open Chat to open 
+   the chat window.
 
-2. In the left pane, select Rooms tab and then select |image26| to create a
-new chat room.
+2. In the left pane, at the header section select |image26| to create a
+   new chat room.
 
 |image27|
 
-3. Enter the first letters from usernames you want to invite to the room. A
-suggestion list appears to facilitate the selection.
-
-	This suggestion list proposes your connections at first level followed by other usernames sorted in alphabetical order.
-
-	You can also remove a chosen username by clicking on |image28|.
+3. Enter the first letters from usernames you want to invite to the room. 
+   A suggestion list appears to facilitate the selection.
+   This suggestion list proposes your connections at first level $
+   followed by other usernames sorted in alphabetical order.
+   You can also remove a chosen username by clicking on |image28| near 
+   his name.
 
 4. Click Save to finish.
 
@@ -188,24 +197,26 @@ suggestion list appears to facilitate the selection.
 Editing a chat room
 ~~~~~~~~~~~~~~~~~~~~~
 
-For the chat room that you have created in the **Rooms** pane, you have
-right to change its name and add/remove members as follows:
+For the chat room that you have created , you have right to change its 
+name and add/remove members as follows:
 
 |image29|
 
--  |image30| Select one chat room among those you created in the left
-   pane.
+-  |image30| Select Rooms filter as follows:
 
--  |image31| Select |image32| in the top right corner to open the scroll
-   list of choices.
+     |roomFilter|
 
--  |image33| Select |image34| from the list of choices.
+-  |image31| Select the room you want to edit.
+
+-  |image33| Click on the more actions button |edit|.
+
+-  |image117| Select "Edit room" button.
 
 An edit chat room form appears in which you can make these actions:
 
 -  Rrename the chat room.
 
--  Add more members (Same way as on :ref: `creating a new chat room <Create-new-chat-room>`).
+-  Add more members (Same way as on :ref:`creating a new chat room <Create-new-chat-room>`).
 
 -  Remove members by clicking the corresponding |image35|.
 
@@ -225,7 +236,7 @@ members.
 |image37|
 
 -  The side panel indicates the total number of members of the room, it
-   displays a number next to People.
+   displays a number next to "Participants".
 
 -  In the side panel, people avatars are displayed combined with their
    presence badge.
@@ -233,8 +244,8 @@ members.
 -  People avatars are sorted by presence, then alphabetic order. The
    order used for presence is : Available, Away, Do not disturb, Offline
 
--  Offline users are not displayed by default. To display them, you need
-   to click on |image38|.
+-  All users are displayed by default. To display only online users, you 
+   need to filter them |image38|.
 
 .. _SendingIM:
 
@@ -245,7 +256,7 @@ Sending an instant message
 
 
 1. Find the contact you want to send message from your lists. The chat
-conversation is opened in the right pane.
+   conversation is opened in the right pane.
 
 |image39|
 
@@ -261,23 +272,6 @@ Adding emotions
 The selected emotions will be displayed as animated ones on the chat
 zone.
 
-Using beautifiers
-~~~~~~~~~~~~~~~~~~~~
-
-eXo Chat currently supports the following beautifiers:
-
--  google:[WORD] - shows a link to Google directly.
-
-   |image41|
-
--  wolfram:[WORD] - shows a link to find your answer on Wolfram Alpha.
-
-   |image42|
-
--  java:[CODE], html:[CODE], js:[CODE] or css:[CODE] - shows your code
-   with great syntax coloring.
-
-   |image43|
 
 .. _ReceivingIM:
 
@@ -308,12 +302,14 @@ see the icon of unread messages.
 Actions on a sent message
 =========================
 
-Hover cursor over one chat text to show actions you can perform.
+Hover cursor near tge chat text to show "More actions" button |image118|.
 
 |image47|
 
 Note that **Edit** and **Delete** actions are only shown for your own
 chat texts. For ones of another, you only can Save notes and Quote.
+
+|image119|
 
 .. _Save-notes:
 
@@ -328,7 +324,7 @@ options: **Send meeting notes** and **Save as wiki** that is similar to :ref:`Re
 Editing
 ~~~~~~~~
 
-Click **Edit** and make changes in the **Edit** form.
+Click **Edit message** and make changes in the **Edit message** form.
 
 |image48|
 
@@ -340,9 +336,13 @@ with a pen icon (|image49|) on the right.
 Deleting
 ~~~~~~~~~
 
-Click **Delete** to remove your sent message from the thread. An
-information message is displayed in place of the deleted message with a
-pen icon on the right.
+Click **Delete** to remove your sent message from the thread. A 
+confirmation popup appears:
+
+|image120|
+
+When you click on "Confirm" button, an information message is displayed 
+in place of the deleted message with a pen icon on the right.
 
 |image50|
 
@@ -379,8 +379,8 @@ options:
 
 |image59|
 
--  If you select **Sending meeting notes**, the notes will be sent to
-   your email. One information message is shown on the chat zone.
+-  If you select **Save notes**, the notes will be sent to your email.
+   One information message is shown on the chat zone.
 
    |image60|
 
@@ -439,9 +439,12 @@ Collaborative actions
 =====================
 
 During a conversation, some collaborative actions are available on
-|image62| icon next to the message input box.
+|image62| icon in the left of the message input box.
 
 |image63|
+
+After clicking on collaboration actions button, it turns to |image121| 
+which enables you to close the collaborative actions window.
 
 .. _Add-event-chat:
 
@@ -450,21 +453,22 @@ Adding an event
 
 1. Select Add Event from the list of collaborative actions.
 
-|image64|
+   |image64|
 
 2. Fill in the form fields, including the event title, dates and time,
-location.
+   location.
 
 3. If you choose wrong dates, for example, when the end date To precedes
-the start date From, an error message is displayed indicating that the
-dates are erroneous.
+   the start date From, an error message is displayed indicating that 
+   the dates are erroneous.
 
 If you do not fill in all the needed fields, an error message appears
 indicating to fill in the whole form.
 
-4. Click Post button. The newly created event will be displayed on the discussion area.
+4. Click Post button. The newly created event will be displayed on the 
+   discussion area.
 
-|image65|
+   |image65|
 
 
 .. note::The event will be created in the personal calendar of every member of the room.
@@ -482,9 +486,10 @@ Assigning a task
 |image66|
 
 2. Fill in the form fields including the task title, assignee, and due
-date.
+   date.
 
-3. Click Post button. The newly created task will be displayed in the discussion area
+3. Click Post button. The newly created task will be displayed in the 
+   discussion area
 
 |image67|
 
@@ -498,7 +503,7 @@ Sharing a link
 |image68|
 
 2. Enter a valid URL, then click Share. The shared link is displayed in
-discussion area with prefixed\ |image69| icon.
+   discussion area with prefixed |image69| icon.
 
 |image70|
 
@@ -514,8 +519,7 @@ Uploading a file
 2. Drag and drop the file into the **DROP YOUR FILE HERE** area, or click
 Select Manually to select a file from your computer.
 
-3. The uploaded file is displayed on the discussion area prefixed with
-|image72| icon.
+3. The uploaded file is displayed on the discussion area. 
 
 |image73|
 
@@ -543,8 +547,7 @@ Raising hand
 |image77|
 
 2. Enter your idea in the text field, then click Raise your hand. Your idea
-is displayed on the discussion area prefixed with |image78| icon.
-
+is displayed on the discussion area.
 |image79|
 
 .. _desktopNotifications:
@@ -599,7 +602,7 @@ corresponding conversation in the Chat application.
 .. _Global-notification-settings:
 
 Global Notification Settings
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Desktop notifications complement other ways to draw your attention to
 new messages like the on-site counter and the bips. You can enable or
@@ -630,12 +633,14 @@ room. For that purpose, follow these steps:
 
 |image83|
 
--  |image84| Select the room that you want to parameter it's
+-  |image84| Filter to select the "Rooms" list
+
+-  |image85| Select the room that you want to parameter it's
    notifications. You can select either one to one chat room or a group
    chat room.
 
--  |image85| Click on |image86| to display actions that you can do on that
-   room.
+-  |image122| Click on |image86| to display actions that you can do on 
+   that room.
 
 -  |image87| Select Notifications from the list.
 
@@ -660,20 +665,34 @@ When your contacts list becomes so long, it will be difficult to control
 all. Here are some tips commonly used to keep your contacts list
 well-organized and easy to find.
 
-.. _Hide-show-chat-contacts:
+.. _Sort_by_msg_status:
 
-Hiding/Showing contacts list
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Sort discussions by messages status
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Currently, your discussions can be arranged into 4 categories in the
-left pane: Favorites, People, Teams and Spaces. To find what you want
-quickly, you should show lists one by one by clicking |image88| and hide
-unnecessary lists by clicking |image89|.
+|image123|
 
-|image90|
+You can sort your discussions by selecting one of these messages 
+statuses:
 
-Also, in **People** pane, you can click |image91| to show/hide offline
-users.
+- *Recent*: orders discussions starting by the most recent one.
+
+- *Unread*: orders discussions starting by the ones that contain unread 
+  messages.
+  
+  
+.. _Mark_as_read_action:
+
+Mark as read
+-------------
+
+When you have many messages in your discussions that you are not 
+interested to ddep on them, you can simply mark them as read:
+
+|image124| 
+ 
+This action will remove all the numbers of unread messages near the
+corresponding discussions.  
 
 .. _Add-toFavorites:
 
@@ -681,26 +700,44 @@ Adding to favorites
 ~~~~~~~~~~~~~~~~~~~~~~
 
 To find quickly a contact you often chat with, hover over one and click
-|image92| to save as a favorite. The contact will be moved to the
-**Favorites** pane, at the top of your chat lists.
+|image92| to save as a favorite. 
 
-To remove one contact from your favorites, hover over the contact in the
-**Favorites** list and select |image93|.
+The star will move to "yellow" color to distinguish favorites contacts:
+
+|image125|
+
+To remove one contact from your favorites, hover over the contact and 
+select |image93|.
+
+.. _Filter_categories:
+
+Filter by discussions category
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+|image126|
+
+You can select a discussion category: 
+
+- All: lists all your discussions.
+
+- People: to list only one-to-one discussions.
+
+- Rooms: to list only rooms discussions.
+
+- Spaces: to list only space discussions.
+
+- Favorites: to list the favorite contacts/group discussions.
 
 .. _Use-search-bar:
 
 Using search bar
 ~~~~~~~~~~~~~~~~
 
--  If you want to find one contact, type some letters following @ in the
+-  If you want to find one contact, type some letters following in the
    search bar. The contacts will be filtered accordingly.
 
    |image94|
 
--  Enter the beginning of multiple words following @, and the predictive
-   search will find the best match.
-
-   |image95|
 
 -  No matter whether you remember the beginning of a group name, the
    first name or the last name of someone, the search will always return
@@ -714,15 +751,16 @@ Using search bar
 Chat messages history
 =====================
 
-Discussing in eXo Chat by :ref:`Sending <SendingIM>` and :ref:`recieving <ReceivingIM>` instant messages
-induces to register the chat messages history which could be easily accessible later through the chat room.
+Discussing in eXo Chat by :ref:`Sending <SendingIM>` and :ref:`recieving <ReceivingIM>` 
+instant messages induces to register the chat messages history which 
+could be easily accessible later through the chat room.
 
 To visualize old chat messages, all you need to do is to scroll up the
-chat window, a loading icon |image0| appears the time to load up to 200
-old message. When the loading icon |image1| disapears this means that
-the 200 messages was loaded and you can read them.
+chat window, a loading icon |image127| appears the time to load up to 
+200 old message. When the loading icon |image128| disapears this means 
+that the 200 messages was loaded and you can read them.
 
-   .. note:: The number of loaded chat messages is set by default to 200, it could be configurable in :ref:`exo.properties <#PLFAdminGuide.Configuration.ConfigurationOverview>`.
+   .. note:: The number of loaded chat messages is set by default to 200, it could be configurable in :ref:`exo.properties <Configuration.ConfigurationOverview>`.
 
 .. _ResponsiveDesign:
 
@@ -813,7 +851,7 @@ appears, select the desired status and the it is updated.
 .. |image33| image:: images/3.png
 .. |image34| image:: images/chat/edit_team_icon.png
 .. |image35| image:: images/chat/deselect_member_icon.png
-.. |image36| image:: images/chat/select_icon.png
+.. |image36| image:: images/chat/select_icon1.png
 .. |image37| image:: images/chat/people_panel.png
 .. |image38| image:: images/chat/show_offline_users.png
 .. |image39| image:: images/chat/chat_conversation_window.png
@@ -863,8 +901,8 @@ appears, select the desired status and the it is updated.
 .. |image83| image:: images/chat/room_notifications.png
 .. |image84| image:: images/1.png
 .. |image85| image:: images/2.png
-.. |image86| image:: images/chat/select_icon.png
-.. |image87| image:: images/3.png
+.. |image86| image:: images/chat/scroll-list-chat.png
+.. |image87| image:: images/4.png
 .. |image88| image:: images/chat/show_chat_icon.png
 .. |image89| image:: images/chat/hide_chat_icon.png
 .. |image90| image:: images/chat/chat_lists.png
@@ -894,4 +932,19 @@ appears, select the desired status and the it is updated.
 .. |image114| image:: images/chat/Leave-room-button.png
 .. |image115| image:: images/chat/Leave-room-popup.png
 .. |image116| image:: images/chat/user-left-room.png
+.. |roomFilter| image:: images/chat/room_filter.png
+.. |edit| image:: images/chat/select_icon1.png
+.. |image117| image:: images/common/4.png
+.. |image118| image:: images/chat/more_actions.png
+.. |image119| image:: images/chat/Actions_other_users.png
+.. |image120| image:: images/chat/confirm_deletion_chat_msg.png
+.. |image121| image:: images/chat/close_collaborative_actions.png
+.. |image122| image:: images/3.png
+.. |image123| image:: images/chat/Sort_by.png
+.. |image124| image:: images/chat/Mark_read.png
+.. |image125| image:: images/chat/Favorites_contacts.png
+.. |image126| image:: images/chat/filter_category.png
+.. |image127| image:: images/chat/loading_icon.png
+.. |image128| image:: images/chat/loading_icon.png
+
 
