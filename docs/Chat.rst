@@ -453,21 +453,22 @@ Adding an event
 
 1. Select Add Event from the list of collaborative actions.
 
-|image64|
+   |image64|
 
 2. Fill in the form fields, including the event title, dates and time,
-location.
+   location.
 
 3. If you choose wrong dates, for example, when the end date To precedes
-the start date From, an error message is displayed indicating that the
-dates are erroneous.
+   the start date From, an error message is displayed indicating that 
+   the dates are erroneous.
 
 If you do not fill in all the needed fields, an error message appears
 indicating to fill in the whole form.
 
-4. Click Post button. The newly created event will be displayed on the discussion area.
+4. Click Post button. The newly created event will be displayed on the 
+   discussion area.
 
-|image65|
+   |image65|
 
 
 .. note::The event will be created in the personal calendar of every member of the room.
@@ -485,9 +486,10 @@ Assigning a task
 |image66|
 
 2. Fill in the form fields including the task title, assignee, and due
-date.
+   date.
 
-3. Click Post button. The newly created task will be displayed in the discussion area
+3. Click Post button. The newly created task will be displayed in the 
+   discussion area
 
 |image67|
 
@@ -501,7 +503,7 @@ Sharing a link
 |image68|
 
 2. Enter a valid URL, then click Share. The shared link is displayed in
-discussion area with prefixed\ |image69| icon.
+   discussion area with prefixed |image69| icon.
 
 |image70|
 
@@ -517,8 +519,7 @@ Uploading a file
 2. Drag and drop the file into the **DROP YOUR FILE HERE** area, or click
 Select Manually to select a file from your computer.
 
-3. The uploaded file is displayed on the discussion area prefixed with
-|image72| icon.
+3. The uploaded file is displayed on the discussion area. 
 
 |image73|
 
@@ -546,8 +547,7 @@ Raising hand
 |image77|
 
 2. Enter your idea in the text field, then click Raise your hand. Your idea
-is displayed on the discussion area prefixed with |image78| icon.
-
+is displayed on the discussion area.
 |image79|
 
 .. _desktopNotifications:
