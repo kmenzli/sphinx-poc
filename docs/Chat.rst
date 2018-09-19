@@ -691,7 +691,7 @@ statuses:
 - *Recent*: sorts discussions starting by the most recent one.
 
 - *Unread*: sorts discussions starting by the ones that contain unread 
-   messages and by the most recent received.
+  messages and by the most recent received.
   
   
 .. _Mark_as_read_action:
@@ -783,7 +783,24 @@ Using eXo Chat on Mobile
 
 eXo Chat is now available for all mobile applications and is responsive for smartphones. Here are some screen shots of different eXo Chat screens.
 
-To open eXo Chat in a mobile device, you just need to click on the chat icon in the top navigation of eXo Platform:
+To open eXo Chat in a mobile device, you just need to click on the chat icon in the top navigation of eXo Platform.
+
+When you click on the Chat button, a new chat room view is displayed containing last discussions sorted by the most recent updated (received or sent).
+
+The discussion contains:
+
+-  the timestamp of the last message received or sent.
+
+-  the user avatar in a circular form.
+
+-  the number of unread messages received.
+
+-  the availability icon on the avatar’s bottom right corner.
+
+-  the favorite star icon(to display only when the contact is selected 
+   as favorite and displayed just after the discussion label: user full 
+   name, space name or room).
+
 
 |image99|
 
@@ -928,7 +945,7 @@ appears, select the desired status and the it is updated.
 .. |image97| image:: images/chat/loading_icon.png
 .. |image98| image:: images/chat/loading_icon.png
 .. |image99| image:: images/chat/chat_responsive_mobile.png
-.. |image100| image:: images/chat/create_new_team_icon.png
+.. |image100| image:: images/chat/scroll-list-chat.png
 .. |image101| image:: images/chat/add_room_responsive_mobile.png
 .. |image102| image:: images/chat/select_icon.png
 .. |image103| image:: images/chat/menu_chat_responsive_mobile.png
@@ -960,7 +977,7 @@ appears, select the desired status and the it is updated.
 .. |image127| image:: images/chat/loading_icon.png
 .. |image128| image:: images/chat/loading_icon.png
 .. |image129| image:: images/chat/raise_hand_icon.png
-.. |image130| image:: images/chat/raise_hand_icon.png
+.. |image130| image:: images/chat/upload_icon.png
 .. |image131| image:: images/chat/uploaded_file_thumbnail.png
 .. |image132| image:: images/chat/task_icon.png
 .. |image133| image:: images/chat/calendar_icon.png
