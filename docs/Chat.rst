@@ -269,8 +269,7 @@ Adding emotions
 
 |image40|
 
-The selected emotions will be displayed as animated ones on the chat
-zone.
+The selected emotions will be displayed on the chat zone.
 
 
 .. _ReceivingIM:
@@ -302,7 +301,7 @@ see the icon of unread messages.
 Actions on a sent message
 =========================
 
-Hover cursor near tge chat text to show "More actions" button |image118|.
+Hover cursor near the chat text to show "More actions" button |image118|.
 
 |image47|
 
@@ -418,6 +417,7 @@ member in the chat room.
 .. note:: * The room creator does not have the Leave room button to prevent having orphan rooms.
 			
 		  * The Leave room button is not available on spaces chat rooms. To leave a space's chat room, you should leave the space itself.
+		  
 		    
 
 * Leaving a chat room deletes it from your chat rooms list and you will 
@@ -425,6 +425,8 @@ member in the chat room.
 
 * When you leave a chat room, a message "$First Last Name left the room"
   will appear to all the chat room members:
+  
+.. note:: When you leave a space, you automatically leave its chat room, but no message is displayed.  
 
 |image116|
 
@@ -466,7 +468,7 @@ If you do not fill in all the needed fields, an error message appears
 indicating to fill in the whole form.
 
 4. Click Post button. The newly created event will be displayed on the 
-   discussion area.
+   discussion area with a calendar icon |image133| in the right corner.
 
    |image65|
 
@@ -489,7 +491,7 @@ Assigning a task
    date.
 
 3. Click Post button. The newly created task will be displayed in the 
-   discussion area
+   discussion area with a task icon |image132| in the corner.
 
 |image67|
 
@@ -503,7 +505,7 @@ Sharing a link
 |image68|
 
 2. Enter a valid URL, then click Share. The shared link is displayed in
-   discussion area with prefixed |image69| icon.
+   discussion area with an icon |image69| in the corner.
 
 |image70|
 
@@ -516,12 +518,18 @@ Uploading a file
 
 |image71|
 
-2. Drag and drop the file into the **DROP YOUR FILE HERE** area, or click
-Select Manually to select a file from your computer.
+2. Drag and drop the file into the **DROP YOUR FILE HERE** area, or 
+   click Select Manually to select a file from your computer.
 
-3. The uploaded file is displayed on the discussion area. 
+3. The uploaded file is displayed on the discussion area with the upload
+   icon in the right corner |image130|. 
 
-|image73|
+|image131|
+
+.. note:: When the file does not have a thumbnail icon, it will be displayed as a clickable label allowing to open the file 
+          in preview mode.
+          
+          |image73|
 
 .. _Ask-question-chat:
 
@@ -533,7 +541,8 @@ Asking a question
 |image74|
 
 2. Enter your question into the field, then click Ask to submit your
-question. The question is displayed on the discussion area with |image75|.
+   question. The question is displayed on the discussion area with 
+   |image75|.
 
 |image76|
 
@@ -546,8 +555,12 @@ Raising hand
 
 |image77|
 
-2. Enter your idea in the text field, then click Raise your hand. Your idea
-is displayed on the discussion area.
+2. Enter your idea in the text field, then click Raise your hand. Your 
+   idea is displayed on the discussion area.
+   In the right corner of the Raising hand message, a hand icon 
+   |image129| is dislayed.
+
+
 |image79|
 
 .. _desktopNotifications:
@@ -675,10 +688,10 @@ Sort discussions by messages status
 You can sort your discussions by selecting one of these messages 
 statuses:
 
-- *Recent*: orders discussions starting by the most recent one.
+- *Recent*: sorts discussions starting by the most recent one.
 
-- *Unread*: orders discussions starting by the ones that contain unread 
-  messages.
+- *Unread*: sorts discussions starting by the ones that contain unread 
+   messages and by the most recent received.
   
   
 .. _Mark_as_read_action:
@@ -687,7 +700,7 @@ Mark as read
 -------------
 
 When you have many messages in your discussions that you are not 
-interested to ddep on them, you can simply mark them as read:
+interested to deep on them, you can simply mark them as read:
 
 |image124| 
  
@@ -734,7 +747,7 @@ Using search bar
 ~~~~~~~~~~~~~~~~
 
 -  If you want to find one contact, type some letters following in the
-   search bar. The contacts will be filtered accordingly.
+   search bar. The discussions will be filtered accordingly.
 
    |image94|
 
@@ -946,5 +959,10 @@ appears, select the desired status and the it is updated.
 .. |image126| image:: images/chat/filter_category.png
 .. |image127| image:: images/chat/loading_icon.png
 .. |image128| image:: images/chat/loading_icon.png
+.. |image129| image:: images/chat/raise_hand_icon.png
+.. |image130| image:: images/chat/raise_hand_icon.png
+.. |image131| image:: images/chat/uploaded_file_thumbnail.png
+.. |image132| image:: images/chat/task_icon.png
+.. |image133| image:: images/chat/calendar_icon.png
 
 
