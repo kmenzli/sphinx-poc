@@ -859,7 +859,7 @@ Filtering options are:
 
 - *Sort by* discussion status: recent or Unread.
  
-- *Filter by* discussion category (All, people, rooms, spaces, favorites) 
+- *Filter by* discussion category: All, people, rooms, spaces, favorites. 
 
 It is also possible to mark your discussions as read by ticking the 
 option *Mark all as read*.
