@@ -714,8 +714,8 @@ corresponding discussions.
 Adding to favorites
 ~~~~~~~~~~~~~~~~~~~~~~
 
-To find quickly a contact you often chat with, hover over one and click
-|image92| to save as a favorite. 
+To find quickly a contact or group chat you often chat with, hover over 
+one and click |image92| to save as a favorite. 
 
 The star will move to "yellow" color to distinguish favorites contacts:
 
@@ -723,6 +723,15 @@ The star will move to "yellow" color to distinguish favorites contacts:
 
 To remove one contact from your favorites, hover over the contact and 
 select |image93|.
+
+You can also click on |image140| then select "Add to favorites":
+
+|image141|
+
+After clicking on it, it turns to "Remove from favorites":
+
+|image142|
+
 
 .. _Filter_categories:
 
@@ -1015,5 +1024,8 @@ discussions in accordance to it:
 .. |image137| image:: images/chat/cross_icon.png
 .. |image138| image:: images/chat/search_icon_mobile.png
 .. |image139| image:: images/chat/Search_filter_mobile.png
+.. |image140| image:: images/chat/scroll-list-chat.png
+.. |image141| image:: images/chat/Add_favorites.png
+.. |image142| image:: images/chat/Remove_favorites.png
 
 
