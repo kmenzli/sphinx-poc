@@ -79,6 +79,8 @@ name.
 
    |image2|
 
+.. _Possible_Chat_statuses:
+
 +----------------+-----------------------------------------------------------+
 | Status         | Description                                               |
 +================+===========================================================+
@@ -781,7 +783,7 @@ that the 200 messages was loaded and you can read them.
 Using eXo Chat on Mobile
 ========================
 
-eXo Chat is now available for all mobile applications and is responsive for smartphones. Here are some screen shots of different eXo Chat screens.
+.. tip:: eXo Chat on mobile has the same features as for the desktop version.
 
 To open eXo Chat in a mobile device, you just need to click on the chat icon in the top navigation of eXo Platform.
 
@@ -816,14 +818,18 @@ the feasible actions on that chat room:
 |image103|
 
 
-.. note:: A back button |image104| allows you to return to the list of chat rooms from a one to one or group chat room.
+.. note:: A back button |image104| allows you to return to the list of your chat rooms.
 
 To view the list of participants in a defined chat room, after making
 the last action, select Show participants:
 
 |image105|
 
-Clicking on |image106| opens a screen:
+You can filter them to show only online users:
+
+|image134|
+
+Clicking on |image106| opens this screen:
 
 |image107|
 
@@ -838,12 +844,34 @@ More details in :ref:`Chat notifications section <desktopNotifications>`.
 |image111|
 
 You can also update your status via the eXo Chat mobile application,
-you just need to click on the current status and the list of statuses
-appears, select the desired status and the it is updated.
+you just need to click on the current status to display the list of 
+:ref:`possible chat statuses <Possible_Chat_statuses>`.
+Select the desired status that will instantly change.
 
 |image112|
 
+Same as for desktop version, it is possible to filter your discussions
+on mobile, simply by clicking the filter icon |image135|:
 
+|image136|
+
+Filtering options are:
+
+- *Sort by* discussion status: recent or Unread.
+ 
+- *Filter by* discussion category (All, people, rooms, spaces, favorites) 
+
+It is also possible to mark your discussions as read by ticking the 
+option *Mark all as read*.
+
+.. note:: You should click on "Save" to conserve your filter criterias.
+		  If you click on Cancel |image137|, no of your selections will be considered.
+
+Searching discussions on mobile is also feasible. You just need to click 
+the |image138| icon, then type your keyword to filter your 
+discussions in accordance to it:
+
+|image139|
 
 .. |image0| image:: images/chat/chat_icon.png
 .. |image1| image:: images/chat/chat_menu.png
@@ -945,9 +973,9 @@ appears, select the desired status and the it is updated.
 .. |image97| image:: images/chat/loading_icon.png
 .. |image98| image:: images/chat/loading_icon.png
 .. |image99| image:: images/chat/chat_responsive_mobile.png
-.. |image100| image:: images/chat/scroll-list-chat.png
+.. |image100| image:: images/chat/plus_icon_mobile.png
 .. |image101| image:: images/chat/add_room_responsive_mobile.png
-.. |image102| image:: images/chat/select_icon.png
+.. |image102| image:: images/chat/select_icon1.png
 .. |image103| image:: images/chat/menu_chat_responsive_mobile.png
 .. |image104| image:: images/chat/back_button.png
 .. |image105| image:: images/chat/participants_responsive_mobile.png
@@ -981,5 +1009,11 @@ appears, select the desired status and the it is updated.
 .. |image131| image:: images/chat/uploaded_file_thumbnail.png
 .. |image132| image:: images/chat/task_icon.png
 .. |image133| image:: images/chat/calendar_icon.png
+.. |image134| image:: images/chat/Filter_online_mobile.png
+.. |image135| image:: images/chat/Filter_icon_mobile.png
+.. |image136| image:: images/chat/Filter_discussions_mobile.png
+.. |image137| image:: images/chat/cross_icon.png
+.. |image138| image:: images/chat/search_icon_mobile.png
+.. |image139| image:: images/chat/Search_filter_mobile.png
 
 
