@@ -2738,7 +2738,7 @@ To disable the activity type, simply set the parameter to ``false``.
 			   new question or answer is created.
 			-  **ks-poll\:spaces**: Activity automatically posted when a new 
 			   poll is created.
-			-  **ks-wiki\:spaces**: Activity automatically posted when a new 
+			-  **ks-wiki\\:spaces**: Activity automatically posted when a new 
 			   wiki page is created in a space wiki.
 			-  **USER\_ACTIVITIES\_FOR\_RELATIONSHIP**: Activity 
 			   automatically posted the first time a user is getting 
@@ -2746,16 +2746,16 @@ To disable the activity type, simply set the parameter to ``false``.
 			   relations.
 			-  **CALENDAR\_ACTIVITY**: Comment posted when an event is 
 			   updated
-			-  **exosocial\:people**: Comment posted when a user updates 
+			-  **exosocial\\:people**: Comment posted when a user updates 
 			   his/her profile.
-			-  **exosocial\:spaces**: Comment posted when a member 
+			-  **exosocial\\:spaces**: Comment posted when a member 
 			   joins/leaves a space.
 			-  **poll\:spaces**: Comment posted when a poll is updated.
 			-  **USER\_COMMENTS\_ACTIVITY\_FOR\_RELATIONSHIP**: Comment 
 			   automatically posted when two users are getting connected.
-			-  **sharecontents\:spaces**: Activity automatically posted when 
+			-  **sharecontents\\:spaces**: Activity automatically posted when 
 			   a content is shared in a space.  
-			-  **exosocial\:relationship**: Activity post when two user are
+			-  **exosocial\\:relationship**: Activity post when two user are
 			   connected together.
 
 .. _SpacesAdministration:
