@@ -784,6 +784,16 @@ notifications. Besides, the **Mark all as read** function allows you to
 change all messages on this menu into the read status. Finally, to
 remove any notification item, simply click the corresponding |image51|.
 
+
+.. note:: You can also view your all On-site notifications in the page ``My Notifications`` accessible by clicking on
+          your username the on My Notifications:
+
+            |image90|
+            
+          It is possible to mark your unread notifications as read simply by clinking on ``Mark all as read`` in the top of the page:
+          
+            |image91|
+
 .. _mobilePushNotifs:
 
 **Mobile push notifications**
@@ -1399,3 +1409,5 @@ such as:
 .. |3| image:: images/common/3.png
 .. |4| image:: images/common/4.png
 .. |5| image:: images/common/5.png
+.. |image90| image:: images/social/MyNotifications.png
+.. |image91| image:: images/social/MArkAllRead.png
