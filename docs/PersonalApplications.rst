@@ -128,7 +128,7 @@ To change the profile banner:
 
 |image8|
 
-2. Click on the icon |image9|, an ``update`` button appears |image 92|. 
+2. Click on the icon |image9|, an ``update`` button appears |image92|. 
 
 3. Click on the Update button, a drive from your hard disk will open.
 
