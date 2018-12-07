@@ -128,20 +128,24 @@ To change the profile banner:
 
 |image8|
 
-2. Click on the icon |image9|, a drive from your hard disk will open.
+2. Click on the icon |image9|, an ``update`` button appears |image 92|. 
 
-3. Select the desired profile banner image and double click on it.
+3. Click on the Update button, a drive from your hard disk will open.
 
-4. The profile banner image will be automatically loaded.
+4. Select the desired profile banner image and double click on it.
+
+5. The profile banner image will be automatically loaded.
 
 |image10|
 
 To reset the profile banner, you just need to hover the right corner
 again and this time, you will have two butons:
 
--  |image11| to change the profile banner.
+|image11|
 
--  |image12| to restore the default banner.
+-  ``Update`` button which opens a drive from your hard disk and allows you to change your profile banner.
+
+-  ``Reset`` button to restore the default grey banner.
 
 When scrolling down on your profile page and if you exceed the cover
 section limit, the profile banner will be replaced by a new navigation
@@ -233,7 +237,7 @@ Contact Information
 
 1. Click on |image18| button then on Change Avatar from the section **Contact Information** to open the Upload an Avatar form.
 
-|image19|
+   |image19|
 
 2. Click Select File to pick up an image from your local device.
 
@@ -241,10 +245,9 @@ Contact Information
 
     .. note:: The uploaded image must be smaller than 2 MB.
 
-4. Click Confirm to open the Avatar Preview form to see some related
-information, such as file name, file type, and image size.
+4. Click Confirm to open the Avatar Preview form to see some related information, such as file name, file type, and image size.
 
-|image20|
+   |image20|
 
 5. Click Save to accept your changes.
 
@@ -252,17 +255,19 @@ information, such as file name, file type, and image size.
 
 1. Mouse over your profile avatar, an icon |image21| will appear.
 
-2. Click on the icon |image22|. This will prompt you to pick a file from your computer.
+2. Click on that icon, an ``Update`` button appears |image93|.
 
-3. Double click on the desired image.
+3. Click on the ``Update`` button. This will prompt you to pick a file from your computer.
+
+4. Double click on the desired image.
 
 4. The profile icon will be automatically changed.
 
-    .. note:: This second way is only available in web version. On mobile devices,
-			you should follow the first way to update/edit your profile avatar.
+.. note:: - This second way is only available in web version. On mobile devices, you should follow the first way to update/edit your profile avatar.
+          - Your image will be automatically resized to a specified value to correspond to the image allowed size.
 
-    .. note:: Your image will be automatically resized to a specified value to
-			correspond to the image allowed size.
+After setting a profile icon, you can update it again or reset it to the default one by clicking on |image94|
+and then clickig on one of the buttons that appear |image95|.
 
 
 .. _Experience:
@@ -289,7 +294,7 @@ Experience
 | position             | position.                                           |
 +----------------------+-----------------------------------------------------+
 
-    .. note:: The information entered in the Skill Used field will be retrieved when you :ref:`search for contacts <Search-Contacts>`.
+.. note:: The information entered in the Skill Used field will be retrieved when you :ref:`search for contacts <Search-Contacts>`.
 
 
 .. _Managing-Activity-Stream:
@@ -783,7 +788,6 @@ corresponding activity stream or you can select **View All** to see all
 notifications. Besides, the **Mark all as read** function allows you to
 change all messages on this menu into the read status. Finally, to
 remove any notification item, simply click the corresponding |image51|.
-
 
 .. note:: You can also view your all On-site notifications in the page ``My Notifications`` accessible by clicking on
           your username the on My Notifications:
@@ -1324,7 +1328,7 @@ such as:
 .. |image8| image:: images/social/banner_tooltip.png
 .. |image9| image:: images/social/update_image_icon.png
 .. |image10| image:: images/social/update_profile_banner.png
-.. |image11| image:: images/social/update_image_icon.png
+.. |image11| image:: images/social/update_reset_banner.png
 .. |image12| image:: images/social/delete_banner_icon.png
 .. |image13| image:: images/social/new_profile_banner.png
 .. |image14| image:: images/social/edit_icon.png
@@ -1404,10 +1408,14 @@ such as:
 .. |image88| image:: images/social/cancel-request.png
 .. |image89| image:: images/social/cancel-request.png
 .. |pushNotif1| image:: images/social/pushNotif1.jpg
+.. |image90| image:: images/social/MyNotifications.png
+.. |image91| image:: images/social/MArkAllRead.png
+.. |image92| image:: images/social/update_button.png
+.. |image93| image:: images/social/Edit_profile_icon2.png
+.. |image94| image:: images/social/update_image_icon.png
+.. |image95| image:: images/social/Edit_profile_icon.png
 .. |1| image:: images/common/1.png
 .. |2| image:: images/common/2.png
 .. |3| image:: images/common/3.png
 .. |4| image:: images/common/4.png
 .. |5| image:: images/common/5.png
-.. |image90| image:: images/social/MyNotifications.png
-.. |image91| image:: images/social/MArkAllRead.png
