@@ -130,26 +130,50 @@ Single Column Layout: Inserts a column layout in the page.
 ------------------------------------------------------------
 |image63|      |image64|     |image65|   
 =============  ============  ===============================
+
+=============  ============  ===============================
+Desktop view   Tablet view   Smartphone view  
+=============  ============  ===============================
 RowResponsive Layout: It inserts a row in the page.
 ------------------------------------------------------------
 |image66|      |image67|     |image68| 
+=============  ============  ===============================
+
+=============  ============  ===============================
+Desktop view   Tablet view   Smartphone view  
 =============  ============  ===============================
 Two columns Layout: It inserts two columns in the page.
 ------------------------------------------------------------
 |image69|      |image70|     |image71| 
 =============  ============  ===============================
+
+=============  ============  ===============================
+Desktop view   Tablet view   Smartphone view  
+=============  ============  ===============================
 Three columns Layout: It inserts three columns in the page.
 ------------------------------------------------------------
 |image72|      |image73|     |image74|
+=============  ============  ===============================
+
+=============  ============  ===============================
+Desktop view   Tablet view   Smartphone view  
 =============  ============  ===============================
 Four columns Layout: It inserts four columns in the page.
 ------------------------------------------------------------
 |image75|      |image76|     |image77|
 =============  ============  ===============================
+
+=============  ============  ===============================
+Desktop view   Tablet view   Smartphone view  
+=============  ============  ===============================
 Big-Small columns Layout: It inserts a big column followed 
 by a small one.
 ------------------------------------------------------------
 |image78|      |image79|     |image80|
+=============  ============  ===============================
+
+=============  ============  ===============================
+Desktop view   Tablet view   Smartphone view  
 =============  ============  ===============================
 Small-Big columns Layout: It inserts a small column followed 
 by a big one.
