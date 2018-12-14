@@ -1336,8 +1336,10 @@ manager.
 
    |image105|
 
-2. Click on the pulldown menu |image106| on the top right of your activity you want to delete.
+2. Click on the pulldown menu on the top right of your activity you want to delete.
    Two entries appear: Edit and Delete.
+   
+   |image106|
 
 3. Click on ``Delete`` button --> A confirmation pop up appears.
 
@@ -1373,7 +1375,7 @@ Editing an activity
 
 3. Make the needed changes and then click on ``Update`` button.
 
-.. note:: The ``Update`` button remains disabled until at leat one change is done.
+.. note:: The ``Update`` button remains disabled until at least one change is done.
 
 4. If you click the ``Cancel`` button, your changes will be ignored.
 
@@ -1386,7 +1388,7 @@ Editing an activity
           
               |image139|
               
-After saving the chage you made on your activity, a text appears under your name indicating that an edit has been done:
+After saving the change you made on your activity, a text appears under your name indicating that an edit has been done:
 
 |image140|           
           
