@@ -102,7 +102,7 @@ The main guides in eXo Platform documentation:
 
 .. toctree::
    :maxdepth: 2
-   :caption: eXo Add-on Guide 
+   :caption: eXo Mobile Guide 
    
    eXoMobileGuide.Getting_started
    Features
