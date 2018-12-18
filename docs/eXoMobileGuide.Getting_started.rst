@@ -177,11 +177,20 @@ are already filled in, you just have to tap the button.
 
 
 .. |image0| image:: images/mobile/sign_up.jpg
+   :width: 10.00000cm
 .. |image1| image:: images/mobile/connect_tribe.jpg
+   :width: 10.00000cm
 .. |image2| image:: images/mobile/tribe_login.jpg
+   :width: 10.00000cm
 .. |image3| image:: images/mobile/register_tribe.jpg  
+   :width: 10.00000cm
 .. |image4| image:: images/mobile/new_intranet.jpg
+   :width: 10.00000cm
 .. |image5| image:: images/mobile/added_intranet.jpg
+   :width: 10.00000cm
 .. |image6| image:: images/mobile/settings.jpg
+   :width: 10.00000cm
 .. |image7| image:: images/mobile/others.jpg
+   :width: 10.00000cm
 .. |image8| image:: images/mobile/others2.jpg
+   :width: 10.00000cm

@@ -85,9 +85,11 @@ devices, eXo Platform native mobile apps let you access and interact
 with your social intranet in a familiar environment.
 
 .. |image0| image:: images/mobile/AS_Mobile.jpg
+   :width: 10.00000cm
 .. |image1| image:: images/mobile/menu.png
 .. |image2| image:: images/mobile/Documents_mobile.png
 .. |image3| image:: images/mobile/others.jpg
+   :width: 10.00000cm
 .. |image4| image:: images/mobile/documents_share.png
 .. |image5| image:: images/mobile/mobile_upload_files.png
 
