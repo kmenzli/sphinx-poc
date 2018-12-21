@@ -1388,7 +1388,8 @@ Editing an activity
           
               |image139|
               
-After saving the change you made on your activity, a text appears under your name indicating that an edit has been done:
+After saving the change you made on your activity, the activity creation timestamp will be updated by a new 
+label under your name indicating the time of the last edit:
 
 |image140|           
           
