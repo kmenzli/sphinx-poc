@@ -289,4 +289,4 @@ texinfo_documents = [
 
 # disqus
 extensions.append('sphinxcontrib.disqus')
-disqus_shortname = eXo Platform Documentation
+disqus_shortname = exoplatformofficialdocs
