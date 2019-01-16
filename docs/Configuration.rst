@@ -165,6 +165,9 @@ Configuration
 
     -  :ref:`Chat Configuration <Configuration.ChatConfiguration>`
        Configuration needed for eXo Chat.
+       
+    -  :ref:`eXo Web Conferencing Configuration <Configuration.WebConferencing>`
+       Configuration needed for eXo Web Conferencing add-on.
 
     -  :ref:`Update of last login time <Configuration.lastlogintime>`
        Parameter for enabling/disabling the update of user's last login
@@ -2560,6 +2563,10 @@ needed for which services.
 Limiting size of uploaded files
 ===============================
 
+Files can be uploaded in multiple applications such as Documents, Wiki, 
+Forum, ... The maximum allowed size for the uploaded files can be 
+changed by  configuration for each application. 
+
 **In Documents application**
 
 When you upload a file in Documents or Sites Explorer, its size is
@@ -2605,8 +2612,28 @@ For example:
 ::
 
     exo.wiki.attachment.uploadLimit=200
+    
+**In Forum application**    
 
-.. note:: The size is in MB for all the three properties.
+In forum application, you can upload files as attachements in topics or 
+import a  whole forum to eXo Platform forum application. 
+
+Both sizes could be defined through these properties:
+
+-  File size in topic:
+
+::
+
+	exo.forum.attachment.upload.limit=10
+
+-  Forum import size:
+
+::
+
+	exo.forum.import.upload.limit=200
+
+
+.. note:: The size is in MB for all the above properties.
 
 .. warning:: If you are using eXo Platform in JBoss application server, note that in
 			 addition to the parameters described above aiming to customize files
@@ -2617,6 +2644,15 @@ For example:
 			 .. code:: xml
 
 					<http-listener name="default" socket-binding="http" redirect-socket="https" max-post-size="209715200"/>
+
+.. tip:: For any others file upload location, the maximum file size is defined by the property ``exo.uploadLimit``.
+		 
+			 .. code::xml
+			 
+					exo.uploadLimit=10
+				
+		 Default value set to 10 Mb.
+		 		
 
 .. _Configuration.UploadHandler:
 
@@ -2632,7 +2668,7 @@ allow this.
 
 To change this restriction, edit the
 ``exo.portal.uploadhandler.public-restriction`` property in the
-:ref:`exo.properties <Configuration.ConfigurationOverview>`file as follows:
+:ref:`exo.properties <Configuration.ConfigurationOverview>` file as follows:
 
 ::
 
@@ -2719,24 +2755,24 @@ To disable the activity type, simply set the parameter to ``false``.
 			-  **USER\_ACTIVITIES\_FOR\_SPACE**: Activity  posted when a 
 			   user creates an activity in a space.
 			-  **LINK\_ACTIVITY**: Activity with a link attachement.
-			-  **sharecontents\:spaces**: Activity for contents sharing
+			-  **sharecontents\\:spaces**: Activity for contents sharing
 			   in a space.
 			-  **USER\_PROFILE\_ACTIVITY**: Activity automatically posted 
 			   the first time a user updates his/her profile.
 			-  **DOC\_ACTIVITY**: Activity with document posted via the 
 			   *Share feature* of the mobile application.
-			-  **files\:spaces**: Activity with documents attached.
-			-  **sharefiles\:spaces**: Activity automatically posted when a 
+			-  **files\\:spaces**: Activity with documents attached.
+			-  **sharefiles\\:spaces**: Activity automatically posted when a 
 			   document is shared in a space.
-			-  **contents\:spaces**: Activity automatically posted when a 
+			-  **contents\\:spaces**: Activity automatically posted when a 
 			   content is created.
-			-  **cs-calendar\:spaces**: Activity automatically posted when a 
+			-  **cs-calendar\\:spaces**: Activity automatically posted when a 
 			   new event is created.
-			-  **ks-forum\:spaces**: Activity automatically posted when a new 
+			-  **ks-forum\\:spaces**: Activity automatically posted when a new 
 			   forum topic or post is created.
-			-  **ks-answer\:spaces**: Activity automatically posted when a 
+			-  **ks-answer\\:spaces**: Activity automatically posted when a 
 			   new question or answer is created.
-			-  **ks-poll\:spaces**: Activity automatically posted when a new 
+			-  **ks-poll\\:spaces**: Activity automatically posted when a new 
 			   poll is created.
 			-  **ks-wiki\\:spaces**: Activity automatically posted when a new 
 			   wiki page is created in a space wiki.
@@ -2750,13 +2786,14 @@ To disable the activity type, simply set the parameter to ``false``.
 			   his/her profile.
 			-  **exosocial\\:spaces**: Comment posted when a member 
 			   joins/leaves a space.
-			-  **poll\:spaces**: Comment posted when a poll is updated.
+			-  **poll\\:spaces**: Comment posted when a poll is updated.
 			-  **USER\_COMMENTS\_ACTIVITY\_FOR\_RELATIONSHIP**: Comment 
 			   automatically posted when two users are getting connected.
 			-  **sharecontents\\:spaces**: Activity automatically posted when 
 			   a content is shared in a space.  
 			-  **exosocial\\:relationship**: Activity post when two user are
 			   connected together.
+			    
 
 .. _SpacesAdministration:
 
@@ -2818,6 +2855,300 @@ The logs are configured via the file:
 
 -  ``$PLATFORM_JBOSS_HOME/standalone/configuration/logging.properties``
    (JBoss).
+   
+   
+.. _Configuration.JPA:
+
+=============================
+Hibernate properties for JPA  
+============================= 
+
+Since 4.3 version, eXo Platform uses Java Persistance API (JPA) to 
+manage relational data and Hibernate as a JPA provider.
+In tis section, we will define properties allowing to configure 
+Hibernate in eXo Platform. The following properties should be set in 
+:ref:`exo.properties <Configuration.ConfigurationOverview>` file.
+
++------------------+-------------------------------+------------------+
+| Name             | Description                   | Value            |
++==================+===============================+==================+
+| **General        |                               |                  |
+| configuration**  |                               |                  |
++------------------+-------------------------------+------------------+
+| exo.jpa.hibernat | The classname of a Hibernate  | A                |
+| e.dialect        | org.hibernate.dialect.Dialect | fully-qualified  |
+|                  |                               | classname for    |
+|                  |                               | example for HSQl |
+|                  |                               | database it is   |
+|                  |                               | org.hibernate.di |
+|                  |                               | alect.HSQLDialec |
+|                  |                               | t                |
++------------------+-------------------------------+------------------+
+| exo.jpa.hibernat | Enables/disables log about    | true or false    |
+| e.show_sql       | SQL statements.               |                  |
++------------------+-------------------------------+------------------+
+| exo.jpa.hibernat | Format log about SQL          | true or false    |
+| e.format_sql     | statements.                   |                  |
++------------------+-------------------------------+------------------+
+| exo.jpa.hibernat | The schema name.              | ${gatein.idm.dat |
+| e.default_schema |                               | asource.schema:} |
++------------------+-------------------------------+------------------+
+| exo.jpa.hibernat | The catalog name, it          |                  |
+| e.default_catalo | qualifies unqualified table   |                  |
+| g                | names with the given catalog  |                  |
+|                  | in generated SQL.             |                  |
++------------------+-------------------------------+------------------+
+| exo.jpa.hibernat | The                           | JNDI name        |
+| e.session_factor | org.hibernate.SessionFactory  |                  |
+| y_name           | is automatically bound to     |                  |
+|                  | this name in JNDI after it is |                  |
+|                  | created.                      |                  |
++------------------+-------------------------------+------------------+
+| exo.jpa.hibernat | Sets a maximum depth for the  | A value between  |
+| e.max_fetch_dept | outer join fetch tree for     | 0 and 3          |
+| h                | single-ended associations. A  |                  |
+|                  | single-ended assocation is a  |                  |
+|                  | one-to-one or many-to-one     |                  |
+|                  | assocation. A value of 0      |                  |
+|                  | disables default outer join   |                  |
+|                  | fetching.                     |                  |
++------------------+-------------------------------+------------------+
+| exo.jpa.hibernat | Default size for Hibernate    | 4,8 or 16        |
+| e.default_batch_ | batch fetching of             |                  |
+| fetch_size       | associations.                 |                  |
++------------------+-------------------------------+------------------+
+| exo.jpa.hibernat | Default mode for entity       | dynamic-map or   |
+| e.default_entity | representation for all        | pojo             |
+| _mode            | sessions opened from this     |                  |
+|                  | SessionFactory, defaults to   |                  |
+|                  | pojo.                         |                  |
++------------------+-------------------------------+------------------+
+| exo.jpa.hibernat | Forces Hibernate to order SQL | true or false    |
+| e.order_updates  | updates by the primary key    |                  |
+|                  | value of the items being      |                  |
+|                  | updated. This reduces the     |                  |
+|                  | likelihood of transaction     |                  |
+|                  | deadlocks in                  |                  |
+|                  | highly-concurrent systems.    |                  |
++------------------+-------------------------------+------------------+
+| exo.jpa.hibernat | Defines precedence of null    | none, first or   |
+| e.order_by.defau | values in ORDER BY clause.    | last             |
+| lt_null_ordering | Defaults to none which varies |                  |
+|                  | between RDBMS implementation. |                  |
++------------------+-------------------------------+------------------+
+| exo.jpa.hibernat | Causes Hibernate to collect   | true or false    |
+| e.generate_stati | statistics for performance    |                  |
+| stics            | tuning                        |                  |
++------------------+-------------------------------+------------------+
+| exo.jpa.hibernat | if true, generated identifier | true or false    |
+| e.use_identifier | properties are reset to       |                  |
+| _rollback        | default values when objects   |                  |
+|                  | are deleted.                  |                  |
++------------------+-------------------------------+------------------+
+| exo.jpa.hibernat | If true, Hibernate generates  | true or false    |
+| e.use_sql_commen | comments inside the SQL, for  |                  |
+| ts               | easier debugging.             |                  |
++------------------+-------------------------------+------------------+
+| **Database       |                               |                  |
+| configuration:   |                               |                  |
+| JDBC**           |                               |                  |
++------------------+-------------------------------+------------------+
+| exo.jpa.hibernat | A non-zero value determines   | An integer or 0  |
+| e.jdbc.fetch_siz | the JDBC fetch size, by       |                  |
+| e                | calling                       |                  |
+|                  | Statement.setFetchSize().     |                  |
++------------------+-------------------------------+------------------+
+| exo.jpa.hibernat | A non-zero value causes       | A value between  |
+| e.jdbc.batch_siz | Hibernate to use JDBC2 batch  | 5 and 30         |
+| e                | updates.                      |                  |
++------------------+-------------------------------+------------------+
+| exo.jpa.hibernat | Set this property to true if  | true or false    |
+| e.jdbc.batch_ver | your JDBC driver returns      |                  |
+| sioned_data      | correct row counts from       |                  |
+|                  | executeBatch(). This option   |                  |
+|                  | is usually safe, but is       |                  |
+|                  | disabled by default. If       |                  |
+|                  | enabled, Hibernate uses       |                  |
+|                  | batched DML for automatically |                  |
+|                  | versioned data.               |                  |
++------------------+-------------------------------+------------------+
+| exo.jpa.hibernat | Select a custom               | The              |
+| e.jdbc.factory_c | org.hibernate.jdbc.Batcher.   | fully-qualified  |
+| lass             | Irrelevant for most           | class name of    |
+|                  | applications.                 | the factory      |
++------------------+-------------------------------+------------------+
+| exo.jpa.hibernat | Enables Hibernate to use      | true or false    |
+| e.jdbc.use_scrol | JDBC2 scrollable resultsets.  |                  |
+| lable_resultset  | This property is only         |                  |
+|                  | relevant for user-supplied    |                  |
+|                  | JDBC connections. Otherwise,  |                  |
+|                  | Hibernate uses connection     |                  |
+|                  | metadata.                     |                  |
++------------------+-------------------------------+------------------+
+| exo.jpa.hibernat | Use streams when writing or   | true or false    |
+| e.jdbc.use_strea | reading binary or             |                  |
+| ms_for_binary    | serializable types to or from |                  |
+|                  | JDBC. This is a system-level  |                  |
+|                  | property.                     |                  |
++------------------+-------------------------------+------------------+
+| exo.jpa.hibernat | Allows Hibernate to use JDBC3 | true or false    |
+| e.jdbc.use_get_g | PreparedStatement.getGenerate |                  |
+| enerated_keys    | dKeys()                       |                  |
+|                  | to retrieve                   |                  |
+|                  | natively-generated keys after |                  |
+|                  | insert. You need the JDBC3+   |                  |
+|                  | driver and JRE1.4+. Disable   |                  |
+|                  | this property if your driver  |                  |
+|                  | has problems with the         |                  |
+|                  | Hibernate identifier          |                  |
+|                  | generators. By default, it    |                  |
+|                  | tries to detect the driver    |                  |
+|                  | capabilities from connection  |                  |
+|                  | metadata.                     |                  |
++------------------+-------------------------------+------------------+
+| **Database       |                               |                  |
+| configuration:   |                               |                  |
+| Cache            |                               |                  |
+| properties**     |                               |                  |
++------------------+-------------------------------+------------------+
+| exo.jpa.hibernat | The classname of a custom     | org.hibernate.ca |
+| e.cache.provider | CacheProvider.                | che.HashtableCac |
+| _class           |                               | heProvider       |
++------------------+-------------------------------+------------------+
+| exo.jpa.hibernat | Optimizes second-level cache  | true or false    |
+| e.cache.use_mini | operation to minimize writes, |                  |
+| mal_puts         | at the cost of more frequent  |                  |
+|                  | reads. This is most useful    |                  |
+|                  | for clustered caches and is   |                  |
+|                  | enabled by default for        |                  |
+|                  | clustered cache               |                  |
+|                  | implementations.              |                  |
++------------------+-------------------------------+------------------+
+| exo.jpa.hibernat | Enables the query cache. You  | true or false    |
+| e.cache.use_quer | still need to set individual  |                  |
+| y_cache          | queries to be cachable.       |                  |
++------------------+-------------------------------+------------------+
+| exo.jpa.hibernat | Completely disable the second | true or false    |
+| e.cache.use_seco | level cache, which is enabled |                  |
+| nd_level_cache   | by default for classes which  |                  |
+|                  | specify a cache mapping.      |                  |
++------------------+-------------------------------+------------------+
+| exo.jpa.hibernat | A custom QueryCache           | Fully-qualified  |
+| e.cache.query_ca | interface. The default is the | classname        |
+| che_factory      | built-in StandardQueryCache.  |                  |
++------------------+-------------------------------+------------------+
+| exo.jpa.hibernat | A prefix for second-level     | a string         |
+| e.cache.region_p | cache region names.           |                  |
+| refix            |                               |                  |
++------------------+-------------------------------+------------------+
+| exo.jpa.hibernat | Forces Hibernate to store     | true or false    |
+| e.cache.use_stru | data in the second-level      |                  |
+| ctured_entries   | cache in a more               |                  |
+|                  | human-readable format.        |                  |
++------------------+-------------------------------+------------------+
+| exo.jpa.hibernat | Optimizes second-level cache  | true or false    |
+| e.cache.use_refe | operation to store immutable  |                  |
+| rence_entries    | entities (aka "reference")    |                  |
+|                  | which do not have             |                  |
+|                  | associations into cache       |                  |
+|                  | directly, this case, lots of  |                  |
+|                  | disassemble and deep copy     |                  |
+|                  | operations could be avoided.  |                  |
+|                  | Default value of this         |                  |
+|                  | property is false.            |                  |
++------------------+-------------------------------+------------------+
+| **Database       |                               |                  |
+| configuration:   |                               |                  |
+| Transactions     |                               |                  |
+| properties**     |                               |                  |
++------------------+-------------------------------+------------------+
+| exo.jpa.hibernat | The classname of a            | org.hibernate.tr |
+| e.transaction.fa | TransactionFactory to use     | ansaction.JTATra |
+| ctory_class      | with Hibernate Transaction    | nsactionFactory  |
+|                  | API. The default is           |                  |
+|                  | JDBCTransactionFactory.       |                  |
++------------------+-------------------------------+------------------+
+| exo.jpa.hibernat | The JTATransactionFactory     | a JNDI name      |
+| e.jta.UserTransa | needs a JNDI name to obtain   |                  |
+| ction            | the JTA UserTransaction from  |                  |
+|                  | the application server.       |                  |
++------------------+-------------------------------+------------------+
+| exo.jpa.hibernat | The classname of a            | org.hibernate.tr |
+| e.transaction.ma | TransactionManagerLookup,     | ansaction.JBossT |
+| nager_lookup_cla | which is used in conjunction  | ransactionManage |
+| ss               | with JVM-level or the hilo    | rLookup          |
+|                  | generator in a JTA            |                  |
+|                  | environment.                  |                  |
++------------------+-------------------------------+------------------+
+| exo.jpa.hibernat | Causes the session be flushed | true or false    |
+| e.transaction.fl | during the before completion  |                  |
+| ush_before_compl | phase of the transaction. If  |                  |
+| etion            | possible, use built-in and    |                  |
+|                  | automatic session context     |                  |
+|                  | management instead.           |                  |
++------------------+-------------------------------+------------------+
+| exo.jpa.hibernat | Causes the session to be      | true or false    |
+| e.transaction.au | closed during the after       |                  |
+| to_close_session | completion phase of the       |                  |
+|                  | transaction. If possible, use |                  |
+|                  | built-in and automatic        |                  |
+|                  | session context management    |                  |
+|                  | instead.                      |                  |
++------------------+-------------------------------+------------------+
+| **Database       |                               |                  |
+| configuration:   |                               |                  |
+| Miscellaneous    |                               |                  |
+| properties**     |                               |                  |
++------------------+-------------------------------+------------------+
+| exo.jpa.current_ | Supply a custom strategy for  | jta, thread,     |
+| session_context_ | the scoping of the Current    | managed, or      |
+| class            | Session.                      | custom.Class     |
++------------------+-------------------------------+------------------+
+| exo.jpa.factory_ | Chooses the HQL parser        | org.hibernate.hq |
+| class            | implementation.               | l.internal.ast.A |
+|                  |                               | STQueryTranslato |
+|                  |                               | rFactory         |
+|                  |                               | or               |
+|                  |                               | org.hibernate.hq |
+|                  |                               | l.internal.class |
+|                  |                               | ic.ClassicQueryT |
+|                  |                               | ranslatorFactory |
++------------------+-------------------------------+------------------+
+| exo.jpa.query.su | Map from tokens in Hibernate  | hqlLiteral=SQL_L |
+| bstitutions      | queries to SQL tokens, such   | ITERAL           |
+|                  | as function or literal names. | or               |
+|                  |                               | hqlFunction=SQLF |
+|                  |                               | UNC              |
++------------------+-------------------------------+------------------+
+| exo.jpa.hbm2ddl. | Validates or exports schema   | validate,        |
+| auto             | DDL to the database when the  | update, create,  |
+|                  | SessionFactory is created.    | create-drop      |
+|                  | With create-drop, the         |                  |
+|                  | database schema is dropped    |                  |
+|                  | when the SessionFactory is    |                  |
+|                  | closed explicitly.            |                  |
++------------------+-------------------------------+------------------+
+| **Connection     |                               |                  |
+| pool             |                               |                  |
+| properties**     |                               |                  |
++------------------+-------------------------------+------------------+
+| exo.jpa.hibernat | Configure Proxool provider    |                  |
+| e.proxool.xml    | using an XML file (.xml is    |                  |
+|                  | appended automatically)       |                  |
++------------------+-------------------------------+------------------+
+| exo.jpa.hibernat | Configure the Proxool         |                  |
+| e.proxool.proper | provider using a properties   |                  |
+| ties             | file (.properties is appended |                  |
+|                  | automatically)                |                  |
++------------------+-------------------------------+------------------+
+| exo.jpa.hibernat | Whether to configure the      |                  |
+| e.proxool.existi | Proxool provider from an      |                  |
+| ng_pool          | existing pool.                |                  |
++------------------+-------------------------------+------------------+
+| exo.jpa.hibernat | Proxool pool alias to use.    |                  |
+| e.proxool.pool_a | Required.                     |                  |
+| lias             |                               |                  |
++------------------+-------------------------------+------------------+
 
 .. _Configuration.JCR:
 
@@ -2912,6 +3243,11 @@ explanation of properties used for eXo Platform caches.
 		-  :ref:`Cache Levels <MonitoringGadget.CacheLevels>` in User Guide.
 
 		-  :ref:`Cache management view <Management.ManagementViews.CacheManagementView>`.
+		
+The below properties are all the cache configuration properties with 
+their default value.
+
+.. note:: Default values should be changed to better tune eXo Platform.	
 
 .. _PortalCaches:
 
@@ -2938,42 +3274,42 @@ These Portal caches can be overridden in
 ::
 
     # Portal Cache Configuration - MOP session Manager
-    exo.cache.portal.mop.MaxNodes=1400
-    exo.cache.portal.mop.TimeToLive=86400
-    # For Cluster mode
+    exo.cache.portal.mop.MaxNodes=5000
+    exo.cache.portal.mop.TimeToLive=-1
     exo.cache.portal.mop.strategy=LIRS
-    exo.cache.portal.mop.cacheMode=replication
+    # For Cluster mode
+    exo.cache.portal.mop.cacheMode=asyncInvalidation
 
     # Portal Cache Configuration - Navigation Service
-    exo.cache.portal.navigation.MaxNodes=700
-    exo.cache.portal.navigation.TimeToLive=86400
-    # For Cluster mode
+    exo.cache.portal.navigation.MaxNodes=5000
+    exo.cache.portal.navigation.TimeToLive=-1
     exo.cache.portal.navigation.strategy=LIRS
-    exo.cache.portal.navigation.cacheMode=replication
+    # For Cluster mode
+    exo.cache.portal.navigation.cacheMode=asyncInvalidation
 
     # Portal Cache Configuration - Description Service
-    exo.cache.portal.description.MaxNodes=1400
-    exo.cache.portal.description.TimeToLive=86400
-    # For Cluster mode
+    exo.cache.portal.description.MaxNodes=5000
+    exo.cache.portal.description.TimeToLive=-1
     exo.cache.portal.description.strategy=LIRS
-    exo.cache.portal.description.cacheMode=replication
+    # For Cluster mode
+    exo.cache.portal.description.cacheMode=asyncReplication
 
     # Portal Cache Configuration - Page Service
-    exo.cache.portal.page.MaxNodes=700
-    exo.cache.portal.page.TimeToLive=86400
-    # For Cluster mode
+    exo.cache.portal.page.MaxNodes=5000
+    exo.cache.portal.page.TimeToLive=-1
     exo.cache.portal.page.strategy=LIRS
-    exo.cache.portal.page.cacheMode=replication
+    # For Cluster mode
+    exo.cache.portal.page.cacheMode=asyncInvalidation
 
     # Portal Cache Configuration - Template Service
-    exo.cache.portal.template.MaxNodes=1000
+    exo.cache.portal.template.MaxNodes=5000
     exo.cache.portal.template.TimeToLive=-1
-    # For Cluster mode
     exo.cache.portal.template.strategy=LIRS
-    exo.cache.portal.template.cacheMode=replication
+    # For Cluster mode
+    exo.cache.portal.template.cacheMode=asyncInvalidation
 
     # Portal Cache Configuration - ResourceBundleData
-    exo.cache.portal.ResourceBundleData.MaxNodes=1000
+    exo.cache.portal.ResourceBundleData.MaxNodes=3000
     exo.cache.portal.ResourceBundleData.TimeToLive=-1
 
 The specific configuration of Portal caches can be found in the files:
@@ -3111,10 +3447,11 @@ loaded from cache rather than the database or the file system.
 
 .. _CommonsCaches:
 
-Commons caches
-~~~~~~~~~~~~~~~~
+Notications, settings and user state caches
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-eXo Platform provides a list of Common Caches:
+eXo Platform provides a list of Caches for notifications, settings and 
+user state:
 
 -  :ref:`SettingCache <SettingCache>`
 
@@ -3128,51 +3465,50 @@ eXo Platform provides a list of Common Caches:
 
 -  :ref:`User Setting Service <UserSettingService>`
 
-These Common caches can be overridden in
-:ref:`exo.properties <Configuration.ConfigurationOverview>` file.
+The *Settings*, *Notifications* and *User State* caches can be 
+overridden in :ref:`exo.properties <Configuration.ConfigurationOverview>` 
+file.
 
-.. code:: xml
+::
 
-    #== COMMONS Caches Configuration == #
+    #== Notications, settings and user state Caches Configuration == #
 
     # Commons Cache Configuration - Settings Service
-    exo.cache.commons.SettingService.MaxNodes=100000
-    exo.cache.commons.SettingService.TimeToLive=86400
-    # For cluster mode
-    exo.cache.commons.SettingService=replication
+    exo.cache.commons.SettingService.MaxNodes=2000
+    exo.cache.commons.SettingService.TimeToLive=360000
     exo.cache.commons.SettingService.strategy=LIRS
-    
-	# Commons Cache Configuration - Web Notification Count
-	exo.cache.commons.WebNotificationCountCache.MaxNodes=1000
-	exo.cache.commons.WebNotificationCountCache.TimeToLive=86400
-	exo.cache.commons.WebNotificationCountCache.strategy=LIRS
-	exo.cache.commons.WebNotificationCountCache.cacheMode=asyncReplication
+    # For cluster mode
+    exo.cache.commons.SettingService=asyncInvalidation
+        
+    # Commons Cache Configuration - Web Notification Count
+    exo.cache.commons.WebNotificationCountCache.MaxNodes=5000
+    exo.cache.commons.WebNotificationCountCache.TimeToLive=-1
+    exo.cache.commons.WebNotificationCountCache.strategy=LIRS
+    exo.cache.commons.WebNotificationCountCache.cacheMode=asyncReplication
 
+    # Commons Cache Configuration - Web Notification
+    exo.cache.commons.WebNotificationCache.MaxNode=5000
+    exo.cache.commons.WebNotificationCache.TimeToLive=3600
+    exo.cache.commons.WebNotificationCache.strategy=LIRS
+    exo.cache.commons.WebNotificationCache.cacheMode=asyncReplication
 
-	# Commons Cache Configuration - Web Notification
-	exo.cache.commons.WebNotificationCache.MaxNode=100000
-	exo.cache.commons.WebNotificationCache.TimeToLive=86400
-	exo.cache.commons.WebNotificationCache.strategy=LIRS
-	exo.cache.commons.WebNotificationCache.cacheMode=asyncReplication
+    # Commons Cache Configuration - Web Notifications
+    exo.cache.commons.WebNotificationsCache.MaxNodes=5000
+    exo.cache.commons.WebNotificationsCache.TimeToLive=3600
+    exo.cache.commons.WebNotificationsCache.strategy=LIRS
+    exo.cache.commons.WebNotificationsCache.cacheMode=asyncReplication
 
+    # Commons Cache Configuration - User State Service
+    exo.cache.commons.UserStateService.MaxNodes=5000
+    exo.cache.commons.UserStateService.TimeToLive=600
+    exo.cache.commons.UserStateService.strategy=LIRS
+    exo.cache.commons.UserStateService.cacheMode=asyncReplication
 
-	# Commons Cache Configuration - Web Notifications
-	exo.cache.commons.WebNotificationsCache.MaxNodes=1000
-	exo.cache.commons.WebNotificationsCache.TimeToLive=86400
-	exo.cache.commons.WebNotificationsCache.strategy=LIRS
-	exo.cache.commons.WebNotificationsCache.cacheMode=asyncReplication
-
-	# Commons Cache Configuration - User State Service
-	exo.cache.commons.UserStateService.MaxNodes=1000
-	exo.cache.commons.UserStateService.TimeToLive=600
-	exo.cache.commons.UserStateService.strategy=LIRS
-	exo.cache.commons.UserStateService.cacheMode=asyncReplication
-
-	# Commons Cache Configuration - User State Service
-	exo.cache.commons.UserSettingService.MaxNodes=500
-	exo.cache.commons.UserSettingService.TimeToLivee=86400
-	exo.cache.commons.UserSettingService.strategy=LIRS
-	exo.cache.commons.UserSettingService.cacheMode=asyncInvalidation
+    # Commons Cache Configuration - User Setting Service
+    exo.cache.commons.UserSettingService.MaxNodes=5000
+    exo.cache.commons.UserSettingService.TimeToLivee=86400
+    exo.cache.commons.UserSettingService.strategy=LIRS
+    exo.cache.commons.UserSettingService.cacheMode=asyncInvalidation
 
 
 The specific configuration of **SettingCache** can be found in the file:
@@ -3232,8 +3568,8 @@ file:
     # == ECMS Caches Configuration == #
     
     # ECMS Cache Configuration - Drive Service
-	exo.cache.ecms.drive.MaxNodes=20000
-	exo.cache.ecms.drive.TimeToLive=86400
+	exo.cache.ecms.drive.MaxNodes=5000
+	exo.cache.ecms.drive.TimeToLive=600
 	exo.cache.ecms.drive.strategy=LIRS
 	exo.cache.ecms.drive.cacheMode=syncInvalidation
 	
@@ -3242,36 +3578,36 @@ file:
 	exo.cache.ecms.scriptservice.TimeToLive=86400
 	
 	# ECMS Cache Configuration - Fragment Cache Service (Markup Cache)
-	exo.cache.ecms.fragmentcacheservice.MaxNodes=1000
-	exo.cache.ecms.fragmentcacheservice.TimeToLive=300
+	exo.cache.ecms.fragmentcacheservice.MaxNodes=10000
+	exo.cache.ecms.fragmentcacheservice.TimeToLive=30
 	
 	# ECMS Cache Configuration - Templates Service
 	exo.cache.ecms.templateservice.MaxNodes=100
 	exo.cache.ecms.templateservice.TimeToLive=-1
 	exo.cache.ecms.TemplateService.strategy=LIRS
-	exo.cache.ecms.templateservice.cacheMode=asyncInvalidation	
+	exo.cache.ecms.templateservice.cacheMode=asyncReplication	
 	
 	# ECMS Cache Configuration - Initial Webcontent
 	exo.cache.ecms.initialwebcontentplugin.MaxNodes=300
 	exo.cache.ecms.initialwebcontentplugin.TimeToLive=86400
 	exo.cache.ecms.InitialWebContentPlugin.strategy=LIRS
-	exo.cache.ecms.initialwebcontentplugin.cacheMode=replication
+	exo.cache.ecms.initialwebcontentplugin.cacheMode=asyncInvalidation
 	
 	# ECMS Cache Configuration - PDF Viewer Service
-	exo.cache.ecms.PDFViewerService.MaxNodes=10000
-	exo.cache.ecms.PDFViewerService.TimeToLive=86400
+	exo.cache.ecms.PDFViewerService.MaxNodes=1000
+	exo.cache.ecms.PDFViewerService.TimeToLive=3600
 	exo.cache.ecms.PDFViewerService.strategy=LIRS
 	exo.cache.ecms.PDFViewerService.cacheMode=syncInvalidation
 	
 	# ECMS Cache Configuration - SEO Cache
 	exo.cache.ecms.seoservice.MaxNode=1000
-	exo.cache.ecms.seoservice.TimeToLive=86400
+	exo.cache.ecms.seoservice.TimeToLive=3600
 	exo.cache.ecms.seoservice.strategy=LIRS
 	exo.cache.ecms.seoservice.cacheMode=asyncReplication
 	
 	# ECMS Cache Configuration - Query Service
 	exo.cache.ecms.queryservice.MaxNodes=5000
-	exo.cache.ecms.queryservice.TimeToLive=86400
+	exo.cache.ecms.queryservice.TimeToLive=600000
 	exo.cache.ecms.queryservice.strategy=LIRS
 	exo.cache.ecms.queryservice.cacheMode=asyncReplication
 
@@ -3284,10 +3620,10 @@ file:
 	exo.cache.ecms.sitesearchservice.drop.TimeToLive=3600		
 
 	# ECMS Cache Configuration - Javascript Cache
-	exo.cache.ecms.javascript.MaxNodes=100
-	exo.cache.ecms.javascript.TimeToLive=-1
+	exo.cache.ecms.javascript.MaxNodes=1000
+	exo.cache.ecms.javascript.TimeToLive=3600
 	exo.cache.ecms.javascript.strategy=LIRS
-	exo.cache.ecms.javascript.cacheMode=replication
+	exo.cache.ecms.javascript.cacheMode=asyncReplication
 
 	# ECMS Cache Configuration - Lock
 	exo.cache.ecms.lockservice.MaxNodes=300
@@ -3481,94 +3817,94 @@ In particular:
 	# == SOCIAL Caches Configuration == #
 
 	# Social Cache Configuration - Identity
-	exo.cache.social.IdentityCache.MaxNodes=1100
+	exo.cache.social.IdentityCache.MaxNodes=5000
 	exo.cache.social.IdentityCache.TimeToLive=86400
 	exo.cache.social.IdentityCache.strategy=LIRS
-	exo.cache.social.IdentityCache.cacheMode=replication
+	exo.cache.social.IdentityCache.cacheMode=asyncInvalidation
 
 	# Social Cache Configuration - Identity Index
-	exo.cache.social.IdentityIndexCache.MaxNodes=1100
+	exo.cache.social.IdentityIndexCache.MaxNodes=5000
 	exo.cache.social.IdentityIndexCache.TimeToLive=86400
 	exo.cache.social.IdentityIndexCache.strategy=LIRS
 	exo.cache.social.IdentityIndexCache.cacheMode=asyncInvalidation
 
 	# Social Cache Configuration - Profile
-	exo.cache.social.ProfileCache.MaxNodes=1100
+	exo.cache.social.ProfileCache.MaxNodes=5000
 	exo.cache.social.ProfileCache.TimeToLive=86400
 	exo.cache.social.ProfileCache.strategy=LIRS
 	exo.cache.social.ProfileCache.cacheMode=asyncInvalidation
 
 	# Social Cache Configuration - Identities
-	exo.cache.social.IdentitiesCache.MaxNodes=1100
+	exo.cache.social.IdentitiesCache.MaxNodes=5000
 	exo.cache.social.IdentitiesCache.TimeToLive=86400
 	exo.cache.social.IdentitiesCache.strategy=LIRS
-	exo.cache.social.IdentitiesCache.cacheMode=replication
+	exo.cache.social.IdentitiesCache.cacheMode=asyncInvalidation
 
 	# Social Cache Configuration - Identities Count
-	exo.cache.social.IdentitiesCountCache.MaxNodes=1100
+	exo.cache.social.IdentitiesCountCache.MaxNodes=5000
 	exo.cache.social.IdentitiesCountCache.TimeToLive=86400
 	exo.cache.social.IdentitiesCountCache.strategy=LIRS
 	exo.cache.social.IdentitiesCountCache.cacheMode=asyncInvalidation
 
 
 	# Social Cache Configuration - Relationship
-	exo.cache.social.RelationshipCache.MaxNodes=1000000
+	exo.cache.social.RelationshipCache.MaxNodes=10000
 	exo.cache.social.RelationshipCache.TimeToLive=86400
 	exo.cache.social.RelationshipCache.strategy=LIRS
 	exo.cache.social.RelationshipCache.cacheMode=asyncReplication
 
 	# Social Cache Configuration - Relationship From Identity
-	exo.cache.social.RelationshipFromIdentityCache.MaxNodes=1000000
+	exo.cache.social.RelationshipFromIdentityCache.MaxNodes=10000
 	exo.cache.social.RelationshipFromIdentityCache.TimeToLive=86400
 	exo.cache.social.RelationshipFromIdentityCache.strategy=LIRS
-	exo.cache.social.RelationshipFromIdentityCache.cacheMode=asyncInvalidation
+	exo.cache.social.RelationshipFromIdentityCache.cacheMode=asyncReplication
 
 	# Social Cache Configuration - Relationships Count
-	exo.cache.social.RelationshipsCountCache.MaxNodes=10000
+	exo.cache.social.RelationshipsCountCache.MaxNodes=5000
 	exo.cache.social.RelationshipsCountCache.TimeToLive=86400
 	exo.cache.social.RelationshipsCountCache.strategy=LIRS
 	exo.cache.social.RelationshipsCountCache.cacheMode=asyncReplication
 
 	# Social Cache Configuration - Relationships
-	exo.cache.social.RelationshipsCache.MaxNodes=10000
+	exo.cache.social.RelationshipsCache.MaxNodes=5000
 	exo.cache.social.RelationshipsCache.TimeToLive=86400
 	exo.cache.social.RelationshipsCache.strategy=LIRS
 	exo.cache.social.RelationshipsCache.cacheMode=asyncReplication
 
 	# Social Cache Configuration - Activity
-	exo.cache.social.ActivityCache.MaxNodes=20000
-	exo.cache.social.ActivityCache.TimeToLive=86400
+	exo.cache.social.ActivityCache.MaxNodes=6000
+	exo.cache.social.ActivityCache.TimeToLive=3600
 	exo.cache.social.ActivityCache.strategy=LIRS
 	exo.cache.social.ActivityCache.cacheMode=asyncReplication
 
 	# Social Cache Configuration - Activities Count
-	exo.cache.social.ActivitiesCountCache.MaxNodes=20000
+	exo.cache.social.ActivitiesCountCache.MaxNodes=5000
 	exo.cache.social.ActivitiesCountCache.TimeToLive=86400
 
 	# Social Cache Configuration - Activities
-	exo.cache.social.ActivitiesCache.MaxNodes=20000
+	exo.cache.social.ActivitiesCache.MaxNodes=5000
 	exo.cache.social.ActivitiesCache.TimeToLive=86400
 
 	# Social Cache Configuration - Space
-	exo.cache.social.SpaceCache.MaxNodes=100
+	exo.cache.social.SpaceCache.MaxNodes=500
 	exo.cache.social.SpaceCache.TimeToLive=86400
 	exo.cache.social.SpaceCache.strategy=LIRS
 	exo.cache.social.SpaceCache.cacheMode=asyncReplication
 
 	# Social Cache Configuration - Space Ref
-	exo.cache.social.SpaceRefCache.MaxNodes=100
+	exo.cache.social.SpaceRefCache.MaxNodes=2000
 	exo.cache.social.SpaceRefCache.TimeToLive=86400
 	exo.cache.social.SpaceRefCache.strategy=LIRS
 	exo.cache.social.SpaceRefCache.cacheMode=asyncReplication
 
 	# Social Cache Configuration - Spaces Count
-	exo.cache.social.SpacesCountCache.MaxNodes=4000
+	exo.cache.social.SpacesCountCache.MaxNodes=5000
 	exo.cache.social.SpacesCountCache.TimeToLive=86400
 	exo.cache.social.SpacesCountCache.strategy=LIRS
 	exo.cache.social.SpacesCountCache.cacheMode=asyncInvalidation
 
 	# Social Cache Configuration - Spaces
-	exo.cache.social.SpacesCache.MaxNodes=4000
+	exo.cache.social.SpacesCache.MaxNodes=5000
 	exo.cache.social.SpacesCache.TimeToLive=86400
 	exo.cache.social.SpacesCache.strategy=LIRS
 	exo.cache.social.SpacesCache.cacheMode=asyncInvalidation
@@ -3580,7 +3916,7 @@ In particular:
 	exo.cache.social.ActiveIdentitiesCache.cacheMode=asyncInvalidation
 
 	# Social Cache Configuration - Suggestions Cache
-	exo.cache.social.SuggestionsCache.MaxNodes=1000
+	exo.cache.social.SuggestionsCache.MaxNodes=5000
 	exo.cache.social.SuggestionsCache.TimeToLive=86400
 	exo.cache.social.SuggestionsCache.strategy=LIRS
 	exo.cache.social.SuggestionsCache.cacheMode=asyncInvalidation
@@ -3731,68 +4067,68 @@ file.
 	# == FORUM Caches Configuration == #
 
 	# Forum Cache Configuration - ForumPermissions
-	exo.cache.forum.ForumPermissionsUsers.MaxNodes=1000
-	exo.cache.forum.ForumPermissionsUsers.TimeToLive=86400
+	exo.cache.forum.ForumPermissionsUsers.MaxNodes=300
+	exo.cache.forum.ForumPermissionsUsers.TimeToLive=-1
 	exo.cache.forum.ForumPermissionsUsers.strategy=LIRS
-	exo.cache.forum.ForumPermissionsUsers.cacheMode=replication
+	exo.cache.forum.ForumPermissionsUsers.cacheMode=asyncInvalidation
 
 	# Forum Cache Configuration - BBCodeData
 	exo.cache.forum.BBCodeData.MaxNodes=500
-	exo.cache.forum.BBCodeData.TimeToLive=86400
+	exo.cache.forum.BBCodeData.TimeToLive=-1
 	exo.cache.forum.BBCodeData.strategy=LIRS
 	exo.cache.forum.BBCodeData.cacheMode=asyncReplication
 
 	# Forum Cache Configuration - BBCodeListData
 	exo.cache.forum.BBCodeListData.MaxNodes=500
-	exo.cache.forum.BBCodeListData.TimeToLive=86400
+	exo.cache.forum.BBCodeListData.TimeToLive=-1
 	exo.cache.forum.BBCodeListData.strategy=LIRS
 	exo.cache.forum.BBCodeListData.cacheMode=asyncReplication
 
 	# Forum Cache Configuration - User Profile
-	exo.cache.forum.UserProfile.MaxNodes=1000
-	exo.cache.forum.UserProfile.TimeToLive=86400
+	exo.cache.forum.UserProfile.MaxNodes=800
+	exo.cache.forum.UserProfile.TimeToLive=14400
 	exo.cache.forum.UserProfile.strategy=LIRS
 	exo.cache.forum.UserProfile.cacheMode=asyncInvalidation
 
 	# Forum Cache Configuration - User Profile List
 	exo.cache.forum.UserProfileList.MaxNodes=300
-	exo.cache.forum.UserProfileList.TimeToLive=86400
+	exo.cache.forum.UserProfileList.TimeToLive=1800
 	exo.cache.forum.UserProfileList=LIRS
 	exo.cache.forum.UserProfileList.cacheMode=asyncInvalidation
 
 	# Forum Cache Configuration - User Profiles List Count
 	exo.cache.forum.UserProfileListCount.MaxNodes=300
-	exo.cache.forum.UserProfileListCount.TimeToLive=86400
+	exo.cache.forum.UserProfileListCount.TimeToLive=1800
 	exo.cache.forum.UserProfileListCount=LIRS
 	exo.cache.forum.UserProfileListCount.cacheMode=asyncInvalidation
 
 	# Forum Cache Configuration - Login User Profiles
-	exo.cache.forum.LoginUserProfile.MaxNodes=1000
-	exo.cache.forum.LoginUserProfile.TimeToLive=86400
+	exo.cache.forum.LoginUserProfile.MaxNodes=500
+	exo.cache.forum.LoginUserProfile.TimeToLive=-1
 	exo.cache.forum.LoginUserProfile.strategy=LIRS
 	exo.cache.forum.LoginUserProfile.cacheMode=asyncInvalidation
 
 	# Forum Cache Configuration - Category List
 	exo.cache.forum.CategoryList.MaxNodes=50
-	exo.cache.forum.CategoryList.TimeToLive=86400
+	exo.cache.forum.CategoryList.TimeToLive=-1
 	exo.cache.forum.CategoryList.strategy=LIRS
 	exo.cache.forum.CategoryList.cacheMode=asyncInvalidation
 
 	# Forum Cache Configuration - Category Data
-	exo.cache.forum.CategoryData.MaxNodes=500
-	exo.cache.forum.CategoryData.TimeToLive=86400
+	exo.cache.forum.CategoryData.MaxNodes=150
+	exo.cache.forum.CategoryData.TimeToLive=-1
 	exo.cache.forum.CategoryData.strategy=LIRS
 	exo.cache.forum.CategoryData.cacheMode=asyncReplication
 
 	# Forum Cache Configuration - Forum List
 	exo.cache.forum.ForumList.MaxNodes=100
-	exo.cache.forum.ForumList.TimeToLive=86400
+	exo.cache.forum.ForumList.TimeToLive=-1
 	exo.cache.forum.ForumList.strategy=LIRS
 	exo.cache.forum.ForumList.cacheMode=asyncInvalidation
 
 	# Forum Cache Configuration - Forum Data
-	exo.cache.forum.ForumData.MaxNodes=2500
-	exo.cache.forum.ForumData.TimeToLive=86400
+	exo.cache.forum.ForumData.MaxNodes=500
+	exo.cache.forum.ForumData.TimeToLive=-1
 	exo.cache.forum.ForumData.strategy=LIRS
 	exo.cache.forum.ForumData.cacheMode=asyncReplication
 
@@ -3803,68 +4139,68 @@ file.
 	exo.cache.forum.TopicData.cacheMode=asyncReplication
 
 	# Forum Cache Configuration - Topic List
-	exo.cache.forum.TopicList.MaxNodes=1000
-	exo.cache.forum.TopicList.TimeToLive=86400
+	exo.cache.forum.TopicList.MaxNodes=500
+	exo.cache.forum.TopicList.TimeToLive=-1
 	exo.cache.forum.TopicList.strategy=LIRS
 	exo.cache.forum.TopicList.cacheMode=asyncInvalidation
 
 	# Forum Cache Configuration - Topic List Count
-	exo.cache.forum.TopicListCount.MaxNodes=2000
-	exo.cache.forum.TopicListCount.TimeToLive=86400
+	exo.cache.forum.TopicListCount.MaxNodes=500
+	exo.cache.forum.TopicListCount.TimeToLive=-1
 	{exo.cache.forum.TopicListCount.strategy=LIRS
 	exo.cache.forum.TopicListCount.cacheMode=asyncInvalidation
 
 	# Forum Cache Configuration - Post data
-	exo.cache.forum.PostData.MaxNodes=1000
-	exo.cache.forum.PostData.TimeToLive=86400
+	exo.cache.forum.PostData.MaxNodes=20000
+	exo.cache.forum.PostData.TimeToLive=-1
 	exo.cache.forum.PostData.strategy=LIRS
 	exo.cache.forum.PostData.cacheMode=asyncReplication
 
 	# Forum Cache Configuration - Post List
-	exo.cache.forum.PostList.MaxNodes=20000
-	exo.cache.forum.PostList.TimeToLive=86400
+	exo.cache.forum.PostList.MaxNodes=500
+	exo.cache.forum.PostList.TimeToLive=-1
 	exo.cache.forum.PostList.strategy=LIRS
 	exo.cache.forum.PostList.cacheMode=asyncInvalidation
 
 	# Forum Cache Configuration - Post List Count
-	exo.cache.forum.PostListCount.MaxNodes=20000
-	exo.cache.forum.PostListCount.TimeToLive=86400
+	exo.cache.forum.PostListCount.MaxNodes=500
+	exo.cache.forum.PostListCount.TimeToLive=-1
 	exo.cache.forum.PostListCount.strategy=LIRS
 	exo.cache.forum.PostListCount.cacheMode=asyncInvalidation
 
 	# Forum Cache Configuration - Poll Data
-	exo.cache.poll.PollData.MaxNodes=1000
-	exo.cache.poll.PollData.TimeToLive=86400
+	exo.cache.poll.PollData.MaxNodes=100
+	exo.cache.poll.PollData.TimeToLive=-1
 	exo.cache.poll.PollData.strategy=LIRS
-	exo.cache.poll.PollData.cacheMode=replication
+	exo.cache.poll.PollData.cacheMode=asyncInvalidation
 
 	# Forum Cache Configuration - Poll List
-	exo.cache.poll.PollList.MaxNodes=1000
-	exo.cache.poll.PollList.TimeToLive=86400
+	exo.cache.poll.PollList.MaxNodes=500
+	exo.cache.poll.PollList.TimeToLive=-1
 	exo.cache.poll.PollList.strategy=LIRS
-	exo.cache.poll.PollList.cacheMode=replication
+	exo.cache.poll.PollList.cacheMode=asyncInvalidation
 
 	# Forum Cache Configuration - Poll Summary Data
-	exo.cache.poll.PollSummaryData.MaxNodes=1000
-	exo.cache.poll.PollSummaryData.TimeToLive=86400
+	exo.cache.poll.PollSummaryData.MaxNodes=500
+	exo.cache.poll.PollSummaryData.TimeToLive=-1
 	exo.cache.poll.PollSummaryData.strategy=LIRS
-	exo.cache.poll.PollSummaryData.cacheMode=replication
+	exo.cache.poll.PollSummaryData.cacheMode=asyncInvalidation
 
 	# Forum Cache Configuration - Watch List Data
-	exo.cache.forum.WatchListData.MaxNodes=1000
-	exo.cache.forum.WatchListData.TimeToLive=86400
+	exo.cache.forum.WatchListData.MaxNodes=5000
+	exo.cache.forum.WatchListData.TimeToLive=-1
 	exo.cache.forum.WatchListData.strategy=LIRS
 	exo.cache.forum.WatchListData.cacheMode=asyncInvalidation
 
 	# Forum Cache Configuration - Link List Data
-	exo.cache.forum.LinkListData.MaxNodes=100
-	exo.cache.forum.LinkListData.TimeToLive=86400
+	exo.cache.forum.LinkListData.MaxNodes=150
+	exo.cache.forum.LinkListData.TimeToLive=-1
 	exo.cache.forum.LinkListData.strategy=LIRS
 	exo.cache.forum.LinkListData.cacheMode=asyncInvalidation
 
 	# Forum Cache Configuration - Object Name Data
 	exo.cache.forum.ObjectNameData.MaxNodes=10000
-	exo.cache.forum.ObjectNameData.TimeToLive=86400
+	exo.cache.forum.ObjectNameData.TimeToLive=-1
 	exo.cache.forum.ObjectNameData.strategy=LIRS
 	exo.cache.forum.ObjectNameData.cacheMode=asyncReplication
 
@@ -4082,20 +4418,15 @@ In particular:
     # == WIKI Caches Configuration == #
 
 	# Wiki Cache Configuration - Page Rendering
-	exo.cache.wiki.PageRenderingCache.MaxNodes=1000
-	exo.cache.wiki.PageRenderingCache.TimeToLive=86400
+	exo.cache.wiki.PageRenderingCache.MaxNodes=3500
+	exo.cache.wiki.PageRenderingCache.TimeToLive=-1
 	exo.cache.wiki.PageRenderingCache.strategy=LIRS
 	exo.cache.wiki.PageRenderingCache.cacheMode=asyncReplication
 
-	# Wiki Cache Configuration - Page Uuid
-	exo.cache.wiki.PageUuidCache.MaxNodes=100000
-	exo.cache.wiki.PageUuidCache.TimeToLive=86400
-	exo.cache.wiki.PageUuidCache.strategy=LIRS
-	exo.cache.wiki.PageUuidCache.cacheMode=asyncReplication
 
 	# Wiki Cache Configuration - Page Attachment
-	exo.cache.wiki.PageAttachmentCache.MaxNodes=100000
-	exo.cache.wiki.PageAttachmentCache.TimeToLive=86400
+	exo.cache.wiki.PageAttachmentCache.MaxNodes=3500
+	exo.cache.wiki.PageAttachmentCache.TimeToLive=-1
 	exo.cache.wiki.PageAttachmentCache.strategy=LIRS
 	exo.cache.wiki.PageAttachmentCache.cacheMode=asyncReplication
 
@@ -4194,13 +4525,13 @@ You can change values of these Calendar caches in
 
 	# Calendar Cache By Id - Group/User/Shared Calendars
 	exo.cache.calendar.Calendar.MaxNodes=1000
-	exo.cache.calendar.Calendar.TimeToLive=86400
+	exo.cache.calendar.Calendar.TimeToLive=3600
 	exo.cache.calendar.Calendar.strategy=LIRS
 	exo.cache.Calendar.Calendar.cacheMode=asyncReplication
 
 	# Calendar originating datasource by calendarId
-	exo.cache.calendar.dsNameById.MaxNodes=2200
-	exo.cache.calendar.dsNameById.TimeToLive=86400
+	exo.cache.calendar.dsNameById.MaxNodes=1000
+	exo.cache.calendar.dsNameById.TimeToLive=-1
 
 	# Calendar Cache Configuration - Group Calendar
 	exo.cache.calendar.GroupCalendar.MaxNodes=100
@@ -4209,32 +4540,32 @@ You can change values of these Calendar caches in
 	exo.cache.calendar.GroupCalendar.cacheMode=asyncReplication
 
 	# Calendar Cache Configuration - Group Calendar Event
-	exo.cache.calendar.GroupCalendarEvent.MaxNodes=4000
-	exo.cache.calendar.GroupCalendarEvent.TimeToLive=86400
+	exo.cache.calendar.GroupCalendarEvent.MaxNodes=1000
+	exo.cache.calendar.GroupCalendarEvent.TimeToLive=3600
 	exo.cache.calendar.GroupCalendarEvent.strategy=LIRS
 	exo.cache.calendar.GroupCalendarEvent.cacheMode=asyncReplication
 
 	# Calendar Cache Configuration - Group Calendar Recurrent Event
-	exo.cache.calendar.GroupCalendarRecurrentEvent.MaxNodes=500
-	exo.cache.calendar.GroupCalendarRecurrentEvent.TimeToLive=86400
+	exo.cache.calendar.GroupCalendarRecurrentEvent.MaxNodes=1000
+	exo.cache.calendar.GroupCalendarRecurrentEvent.TimeToLive=3600
 	exo.cache.calendar.GroupCalendarRecurrentEvent.strategy=LIRS
 	exo.cache.calendar.GroupCalendarRecurrentEvent.cacheMode=asyncReplication
 
 	# Calendar Cache Configuration - User Calendar
-	exo.cache.calendar.UserCalendarSetting.MaxNodes=1000
-	exo.cache.calendar.UserCalendar.TimeToLive=86400
+	exo.cache.calendar.UserCalendar.MaxNodes=1000
+	exo.cache.calendar.UserCalendar.TimeToLive=3600
 	exo.cache.calendar.UserCalendar.strategy=LIRS
 	exo.cache.calendar.UserCalendar.cacheMode=asyncInvalidation
 
 	# Calendar Cache Configuration - User Calendar Setting
 	exo.cache.calendar.UserCalendarSetting.MaxNodes=1000
-	exo.cache.calendar.UserCalendarSetting.TimeToLive=86400
+	exo.cache.calendar.UserCalendarSetting.TimeToLive=3600
 	exo.cache.calendar.UserCalendarSetting.strategy=LIRS
 	exo.cache.calendar.UserCalendarSetting.cacheMode=asyncInvalidation
 
 	# Calendar Cache Configuration -Event Categories
-	exo.cache.calendar.EventCategories.MaxNodes=50000
-	exo.cache.calendar.EventCategories.TimeToLive=86400
+	exo.cache.calendar.EventCategories.MaxNodes=1000
+	exo.cache.calendar.EventCategories.TimeToLive=3600
 	exo.cache.calendar.EventCategories.strategy=LIRS
 	exo.cache.calendar.EventCategories.cacheMode=asyncReplication
 
@@ -5438,6 +5769,63 @@ Chat Client updates
 |                    |                    | considered *offline*.                |
 +--------------------+--------------------+--------------------------------------+
 
+.. _Configuration.WebConferencing:
+
+==================================
+Configuring eXo Web Conferencing
+==================================
+
+:ref:`eXo Web Conferencing <webconferencing>` add-on enables users to 
+make video calls through the interface of eXo Platform.
+You can parameter this add-on by configuring the below variables in 
+:ref:`exo.properties <Configuration.ConfigurationOverview>` file.
+
++------------------------------------------------+--------------------+--------------------------------------+
+| Parameter                                      | Default            | Description                          |
++================================================+====================+======================================+
+| ``webconferencing.webrtc.bundlePolicy``        |      balanced      | WebRTC setting to indicate which     |
+|						 |                    | media-bundling policy to use when    |
+|						 |                    | gathering ICE candidates.            |
++------------------------------------------------+--------------------+--------------------------------------+
+| ``webconferencing.webrtc.iceCandidatePoolSize``|        0           | WebRTC setting which define the size |
+|                                                |                    | of the prefetched ICE pool.          |
++------------------------------------------------+--------------------+--------------------------------------+
+| ``webconferencing.webrtc.iceTransportPolicy``  |       all          | WebRTC setting to indicate which     |
+|                                                |                    | candidates the ICE Agent is allowed  |
+|						 |		      | to use.				     |
++------------------------------------------------+--------------------+--------------------------------------+
+| ``webconferencing.webrtc.default.stun.enabled``|      true          | Indicates if the default defined     |
+|                                                |                    | STUN servers must be used.           |
++------------------------------------------------+--------------------+--------------------------------------+
+| ``webconferencing.webrtc.exo.stun.enabled``    |      false         | Indicates if the default defined eXo |
+|                                                |                    | STUN servers must be used.           |
++------------------------------------------------+--------------------+--------------------------------------+
+| ``webconferencing.webrtc.xirsys.stun.enabled`` |      false         | Indicates if the Xirsys STUN servers |
+|                                                |                    | must be used.                        |
++------------------------------------------------+--------------------+--------------------------------------+
+| ``webconferencing.webrtc.exo.turn.enabled``    |      false         | Indicates if the default defined     |
+|						 |                    | TURN servers must be used.           |
++------------------------------------------------+--------------------+--------------------------------------+
+| ``webconferencing.webrtc.exo.turn.username``   |                    | Username to authenticate on default  |
+|                                                |                    | TURN servers.                        |
++------------------------------------------------+--------------------+--------------------------------------+
+| ``webconferencing.webrtc.exo.turn.credential`` |                    | Password to authenticate on default  |
+|                                                |                    | TURN servers.                        |
++------------------------------------------------+--------------------+--------------------------------------+
+| ``webconferencing.webrtc.xirsys.turn.enabled`` |      false         | Indicates if the Xirsys TURN servers |
+|                                                |                    | must be used.                        |
++------------------------------------------------+--------------------+--------------------------------------+
+| ``webconferencing.webrtc.xirsys.username``     |                    | Username to authenticate on Xirsys   |
+|                                                |                    | TURN servers.                        |
++------------------------------------------------+--------------------+--------------------------------------+
+| ``webconferencing.webrtc.xirsys.credential``   |                    | Password to authenticate on Xirsys   |
+|                                                |                    | TURN servers.                        |
++------------------------------------------------+--------------------+--------------------------------------+
+| ``webconferencing.webrtc.active``              |      true          | Indicates if the WebRTC connector    |
+|                                                |                    | is active.                           |
++------------------------------------------------+--------------------+--------------------------------------+
+
+
 .. _Configuration.lastlogintime:
 
 =========================
@@ -5449,7 +5837,7 @@ user in an internal database. You may need to disable this parameter to
 optimize login time especially when your system is highly solicited by a
 lot of concurrent users. You can disable this feature by configuring the
 parameter ``exo.idm.user.updateLastLoginTime`` in
-:ref:`exo.properties <Configuration.ConfigurationOverview>`file.
+:ref:`exo.properties <Configuration.ConfigurationOverview>` file.
 The default value is set to true.
 
 Setting ``exo.idm.user.updateLastLoginTime`` to true enables the update,

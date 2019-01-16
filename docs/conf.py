@@ -273,10 +273,6 @@ texinfo_documents = [
      'Miscellaneous'),
 ]
 
-# disqus
-extensions.append('sphinxcontrib.disqus')
-disqus_shortname = exoplatformofficialdocs
-
 # Documents to append as an appendix to all manuals.
 #texinfo_appendices = []
 

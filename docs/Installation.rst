@@ -56,7 +56,7 @@ System requirements
 
 .. warning:: The requirements cited below are provisional and may change according to quality tests findings.
 
-To run eXo Platform 5.1, your system is required to meet the following 
+To run eXo Platform 5.2, your system is required to meet the following 
 specifications or higher:
 
 -  CPU: Multi-core recommended, 2GHz minimum.
@@ -68,11 +68,11 @@ specifications or higher:
 
 -  Free disk space: 10GB minimum
 
--  Java 9+: JDK 9 is required for eXo Platform 5.1 version. Set the
+-  Java 9+: JDK 9 is required for eXo Platform 5.2 version. Set the
    **JAVA\_HOME** environment variable to point to your JDK
    installation.
 
--  Java 7 and below is incompatible for eXo Platform 5.1 version.
+-  Java 7 and below is incompatible for eXo Platform 5.2 version.
 
 -  Browser Compatibility:
 
@@ -502,7 +502,7 @@ Installing the Tomcat bundle
 
 The eXo Platform Tomcat bundle is a ready-made package on top of the Tomcat 8.5
 application server. So, you just need to download and extract the
-package (named ``eXo-Platform-5.1.0.zip``, for example) on your server.
+package (named ``eXo-Platform-5.2.0.zip``, for example) on your server.
 In this guideline, ``$PLATFORM_TOMCAT_HOME`` is the folder path of the
 extracted package.
 
@@ -550,6 +550,8 @@ If you still see the process running, you may forcefully stop it. There
 are several ways: using Task Manager (Windows), or running
 ``stop_eXo.sh -force`` (Linux/OS X), or using ``kill -9`` command
 (Linux/OS X).
+
+.. _PLFAdminGuide.InstallationAndStartup.Tomcat.DevAndDebugMode:
 
 Starting up eXo Platform in the Dev/Debug mode
 ------------------------------------------------
@@ -679,7 +681,7 @@ The second way: Using the NSSM tool
 Installing on JBoss EAP
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
-eXo Platform 5.1 version integrates with JBoss EAP 7.1.
+Starting from the versions 5.1, eXo Platform integrates with JBoss EAP 7.1.
 
 Prerequisites
 ---------------
@@ -805,7 +807,7 @@ eXo Chat installation
 
 eXo Chat application has two installation modes available:
 
--  The embedded mode: eXo Chat is deployed inside eXo Pltaform.
+-  The embedded mode: eXo Chat is deployed inside eXo Platform.
 
 -  The standalone mode: eXo Chat is installed into a dedicated
    server.
@@ -816,18 +818,18 @@ Each mode has its advantages:
    an another Tomcat server.
 
 -  The standalone mode has better scalability and performance since
-   server resources are not shared between eXo Pltaform and eXo Chat, and
+   server resources are not shared between eXo Platform and eXo Chat, and
    since the eXo Chat can be clustered.
 
 More details about the installation procedure through these two parts:
 
--  :ref:`eXo Chat installation into eXo Pltaform server <ChatInstallation.SingleServer>`
+-  :ref:`eXo Chat installation into eXo Platform server <ChatInstallation.SingleServer>`
 
 -  :ref:`eXo Chat installation into a dedicated server <ChatInstallation.TwoServers>`
 
 .. _ChatInstallation.SingleServer:
 
-eXo Chat installation into eXo Pltaform server
+eXo Chat installation into eXo Platform server
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 1. The Chat add-on uses `MongoDB <http://www.mongodb.org/downloads>`__ 
@@ -842,7 +844,7 @@ eXo Chat installation into eXo Pltaform server
 		  anyone who knows the passphrase can do things, such as dropping, re-creating and indexing the database, so you need to change this
 		  property in the :ref:`configuration file <Configuration.ChatConfiguration>`.
 
-3. Start eXo Pltaform server. When users sign in eXo Pltaform, the Chat 
+3. Start eXo Platform server. When users sign in eXo Platform, the Chat 
    icon (|image14|) will be shown on the top navigation bar.
 
 .. _ChatInstallation.TwoServers:
@@ -850,15 +852,15 @@ eXo Chat installation into eXo Pltaform server
 eXo Chat installation into a dedicated server
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-eXo Pltaform provides the standalone mode to install eXo Chat into a
+eXo Platform provides the standalone mode to install eXo Chat into a
 dedicated server. In this mode, the backend of eXo Chat application
 is deployed in its own Tomcat application server while the frontend i.e.
-the portlets are deployed in eXo Pltaform instance.
+the portlets are deployed in eXo Platform instance.
 
 This alternative architecture brings better scalability and performance
-since server resources are not shared between eXo Pltaform and eXo Chat.
+since server resources are not shared between eXo Platform and eXo Chat.
 It allows to add more eXo Chat server nodes independently from
-eXo Pltaform nodes.
+eXo Platform nodes.
 
 The schema below summaries the standalone mode architecture:
 
@@ -866,7 +868,7 @@ The schema below summaries the standalone mode architecture:
 
 To install eXo Chat in standalone mode, follow this procedure:
 
-1. Ensure to uninstall eXo Chat from eXo Pltaform server if it is already
+1. Ensure to uninstall eXo Chat from eXo Platform server if it is already
    installed by the Addon manager: ``addon uninstall exo-chat``
 
 2. Download eXo Chat package:
@@ -901,7 +903,7 @@ To install eXo Chat in standalone mode, follow this procedure:
                       ....
 
 .. note:: Make sure there is no port conflicts between the eXo Chat server and other systems. If you deploy the eXo Chat server on
-          the same host than eXo Pltaform, then, you should change all the ports as in the example above.
+          the same host than eXo Platform, then, you should change all the ports as in the example above.
           
 
    -  Deploy chat application in Apache tomcat by copying the following
@@ -936,7 +938,7 @@ To install eXo Chat in standalone mode, follow this procedure:
           cd  chat-server
           ./bin/catalina.sh run
 
-5. Install Chat application into eXo Pltaform server :
+5. Install Chat application into eXo Platform server :
    ``./addon install exo-chat-client``
 
 6. Configure these properties in ``eXo_tomcat/gatein/conf/chat.properties``:
@@ -949,7 +951,7 @@ To install eXo Chat in standalone mode, follow this procedure:
 		chatIntervalSession=60000
 		chatPassPhrase=change-me
 
-7. Start eXo Pltaform server:
+7. Start eXo Platform server:
 
    ::
 
