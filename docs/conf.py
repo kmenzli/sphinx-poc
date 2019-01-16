@@ -51,7 +51,6 @@ project = u'eXo Platform Documentation'
 copyright = u'2018, eXoPlatform'
 author = u'eXoPlatform'
 
-eXoPlatformTestDocs = check_output([SETUP, '--name']).strip().decode('ascii')
 
 # The version info for the project you're documenting, acts as replacement for
 # |version| and |release|, also used in various other places throughout the
