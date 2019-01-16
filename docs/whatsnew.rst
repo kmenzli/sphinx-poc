@@ -149,3 +149,6 @@ storage:
 .. |image7| image:: images/Share-file.png
 .. |image8| image:: images/usersWiki.png
 .. |image9| image:: images/spaceWiki.png
+
+
+.. disqus::

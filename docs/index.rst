@@ -145,3 +145,4 @@ The main guides in eXo Platform documentation:
 
 
    
+.. disqus::
