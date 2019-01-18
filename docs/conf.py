@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 #
-# sphix-poc documentation build configuration file, created by
+# eXo Platform documentation build configuration file, created by
 # sphinx-quickstart on Tue Dec 19 09:26:23 2017.
 #
 # This file is execfile()d with the current directory set to its
@@ -203,7 +203,7 @@ html_static_path = ['_static']
 #html_search_scorer = 'scorer.js'
 
 # Output file base name for HTML help builder.
-htmlhelp_basename = 'sphix-pocdoc'
+htmlhelp_basename = 'eXoPlatform-doc'
 
 # -- Options for LaTeX output ---------------------------------------------
 
@@ -225,7 +225,7 @@ latex_elements = {
 # (source start file, target name, title,
 #  author, documentclass [howto, manual, or own class]).
 latex_documents = [
-    (master_doc, 'sphix-poc.tex', u'sphix-poc Documentation',
+    (master_doc, 'eXoPlatform-doc.tex', u'eXoPlatform Documentation',
      u'eXoPlatform', 'manual'),
 ]
 
@@ -255,7 +255,7 @@ latex_documents = [
 # One entry per manual page. List of tuples
 # (source start file, name, description, authors, manual section).
 man_pages = [
-    (master_doc, 'sphix-poc', u'sphix-poc Documentation',
+    (master_doc, 'eXoPlatform-doc', u'eXoPlatform Documentation',
      [author], 1)
 ]
 
@@ -269,8 +269,8 @@ man_pages = [
 # (source start file, target name, title, author,
 #  dir menu entry, description, category)
 texinfo_documents = [
-    (master_doc, 'sphix-poc', u'sphix-poc Documentation',
-     author, 'sphix-poc', 'One line description of project.',
+    (master_doc, 'eXoPlatform-doc', u'eXoPlatform Documentation',
+     author, 'eXoPlatform', 'One line description of project.',
      'Miscellaneous'),
 ]
 
@@ -286,7 +286,3 @@ texinfo_documents = [
 # If true, do not generate a @detailmenu in the "Top" node's menu.
 #texinfo_no_detailmenu = False
 
-
-# disqus
-extensions.append('sphinxcontrib.disqus')
-disqus_shortname = exoplatformofficialdocs
