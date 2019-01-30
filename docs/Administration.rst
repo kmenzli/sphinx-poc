@@ -2445,7 +2445,7 @@ through an interface easy to use.
 |image305|
 
 .. note:: By default, only the super user i.e. **root** is able to create spaces and only administrators i.e.
-          the group ``*:/platform/administrators`` memvers are able to access the Spaces administration menu.
+          the group ``*:/platform/administrators`` members are able to access the Spaces administration menu.
           
 The spaces administration interface is accessible via the menu Administration --> Spaces.
 
@@ -2472,7 +2472,7 @@ Manage spaces tab
 |image308|
 
 The "Manage spaces" tab is viewable by the group of users defined in the 
-"Permissions" tab by the variable "Manage spaces". 
+:ref:`Permissions tab <AdministratingSpaces.Permissions>` by the variable "Manage spaces". 
 
 |image307|
 
@@ -2498,10 +2498,11 @@ you will be redirected to the configuration page of that space in an another bro
 
 You can edit the space's configuration by:
 
--  Changing its description and/or
--  Adding/removing members and/or
--  Changing the space's visibility and accessibilty and/or
--  Adding/removing Applications and/or
+-  Changing its description
+-  Chaging its name 
+-  Adding/removing members 
+-  Changing the space's visibility and accessibilty 
+-  Adding/removing Applications 
 -  Editing its navigation
 
 even if you are not a member on that space.
@@ -2521,13 +2522,16 @@ A confirmation popup appears allowing you either to confirm or cancel the space'
 
 |image313|
 
+If you click on Cancel button, nothing happens and if you click on the Delete button, the space is removed.
 
 .. _AdministratingSpaces.Permissions:
 
 Permissions tab
 ~~~~~~~~~~~~~~~~
 
-Through this tab, you can, as an admistrator of the platform define who can create spaces and who can manage
+|image318|
+
+Through this tab you can, as an admistrator of the platform, define who can create spaces and who can manage
 all the platform's spaces.
 
 To define who can create spaces:
@@ -2536,13 +2540,15 @@ To define who can create spaces:
    allowing to remove them. The edit icon becomes a save icon |image315| and a new icon appears |image317| allowing
    to cancel the edition.
    
+   |image319|
+   
 2. Remove existing values and/or input new ones. When inputting new values, you will get suggestions 
    facilitating you the selection.
    
 3. When you finish selecting the groups of users you want to grant them the spaces creation permission, click on 
    the save icon |image316|.  
 
-To define the :ref:`group of spaces managers <AdministratingSpaces.ManageSpaces>, you just have to follow the same 
+To define the :ref:`group of spaces managers <AdministratingSpaces.ManageSpaces>`, you just have to follow the same 
 procedure as for the previous case.
 
 .. _ManagingSites:
@@ -5044,10 +5050,11 @@ The following image shows the screen when an anonymous user accesses
 .. |image312| image:: images/platform/delete_space.png
 .. |image313| image:: images/platform/space_deletion_confirmation.png
 .. |image314| image:: images/platform/edit_icon.png
-.. |image314| image:: images/platform/save_icon.png
+.. |image315| image:: images/platform/save_icon.png
 .. |image316| image:: images/platform/save_icon.png
 .. |image317| image:: images/platform/cancel_edition.png
 .. |image318| image:: images/platform/permissions_tab.png
+.. |image319| image:: images/platform/create_space_permission.png
 
 
 
