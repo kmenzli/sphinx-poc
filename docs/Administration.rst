@@ -2454,10 +2454,10 @@ The spaces administration interface is accessible via the menu Administration --
 This interface contains two tabs:
 
 - "Manage spaces" tab displays the list of spaces and the corresponding actions: edit and delete.
-- "Permissions" tab lets you grant permissions to a group of users to :ref:`Create <Create-Space>` or :ref:`Manage <AdministratingSpaces.ManageSpaces>` spaces. 
+- "Permissions" tab displays the list of groups who can :ref:`Create <Create-Space>` or :ref:`Manage <AdministratingSpaces.ManageSpaces>` spaces. 
 
      
-In this section, you will learn how to use the Spaces administration interface to :     
+Spaces administration interface allows to :     
 
 -  :ref:`Manage spaces <AdministratingSpaces.ManageSpaces>`
 -  :ref:`Change permissions <AdministratingSpaces.Permissions>`
@@ -2469,18 +2469,18 @@ Manage spaces tab
 
 |image308|
 
-The "Manage spaces" tab is viewable by the group of users defined in the 
-:ref:`Permissions tab <AdministratingSpaces.Permissions>` by the "Manage spaces" permission. 
+The "Manage spaces" tab can be seen by users belonging to any listed in 
+the "Manage spaces" permission of the :ref:`Permissions tab <AdministratingSpaces.Permissions>`. 
 Users with this permission are allowed to edit or delete any space in the platform.
 
 |image307|
 
-If the permission has no value defined in the interface, the group of users defined
+If the permission has no value defined in the interface, users in the groups defined
 by the property :ref:`exo.social.spaces.administrators <SpacesAdministration>` in
-:ref:`exo.properties file <Configuration.eXoConfiguration>` is allowed to manage spaces.
+:ref:`exo.properties file <Configuration.eXoConfiguration>` are allowed to manage spaces.
 
-.. warning:: When the Manage spaces permission is defined both through the interface and 
-             by configuration, the value in the interface takes precedence. 
+.. warning:: When the Manage spaces permission is both defined through the interface and 
+             the configuration, the value in the interface takes precedence. 
 
 .. note:: If the permission is neither defined through the interface nor by configuration, only administrators are
           allowed to access the Manage spaces tab.
@@ -2489,7 +2489,7 @@ by the property :ref:`exo.social.spaces.administrators <SpacesAdministration>` i
 Edit space
 -----------
 
-Users with the "Manage Spaces" permission, can edit space settings by clicking the edit icon |image309| of a specific space.
+Users granted with the "Manage Spaces" permission, can edit any space settings by clicking the edit icon |image309| of a specific space.
 The Space Settings page of the target space is opened in another browser tab.
 
 |image320|
@@ -2506,8 +2506,8 @@ section for more details.
 Delete space
 --------------
 
-Users with the Manage Spaces permission, can also :ref:`delete <Delete-Space>` any space of 
-the platform even the spaces where they are neither a manager nor a member.
+Users granted with the Manage Spaces permission, can also :ref:`delete <Delete-Space>` any space of 
+the platform; even the spaces where they are neither a manager nor a member.
 
 To delete a space, a click on the delete icon |image311| of the corresponding space in the interface of 
 the "Manage spaces" tab is needed.
@@ -2520,7 +2520,7 @@ A confirmation popup appears to confirm deletion of the space or cancel
 |image313|
 
 
-.. warning:: When you delete a space, all its data is also removed and can't be recovered.
+.. warning:: When deleting a space, all its data is also removed and can't be recovered.
 
 .. _AdministratingSpaces.Permissions:
 
@@ -2529,7 +2529,7 @@ Permissions tab
 
 |image318|
 
-This tab allows administrators of the platform, define permissions related to all spaces of the platform.
+This tab allows administrators of the platform to define permissions related to all spaces of the platform.
 
 To define who can create spaces:
 
@@ -2543,7 +2543,7 @@ To define who can create spaces:
    of the groups.
    
 3. After entering or selecting the groups, a click on 
-   the save icon |image316| will validate the new permission grants.  
+   the save icon |image316| validates the new permission grants.  
 
 To define the :ref:`group of spaces managers <AdministratingSpaces.ManageSpaces>`, simply follow the same 
 procedure.
